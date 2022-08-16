@@ -1,0 +1,1859 @@
+/* Deprecated vars */
+/* ----------------------------------------- */
+/*  Fonts                                    */
+/* ----------------------------------------- */
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/modesto-condensed/modesto-condensed.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/modesto-condensed/modesto-condensed-bold.woff2') format('woff2');
+}
+.modesto {
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* ----------------------------------------- */
+/*  Sheet Styles                             */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/*  Flexbox                                  */
+/* ----------------------------------------- */
+/* Lofty adding to move attribute to right side... but this only does the thing inside the little box, i need to move that */
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.flexrow > * {
+  flex: 1;
+}
+.flexrow .flex1 {
+  flex: 1;
+}
+.flexrow .flex2 {
+  flex: 2;
+}
+.flexrow .flex3 {
+  flex: 3;
+}
+.flexrow .flex4 {
+  flex: 4;
+}
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /*flex-wrap: wrap;*/
+}
+.flexcol > * {
+  flex: 1;
+}
+.flexcol .flex1 {
+  flex: 1;
+}
+.flexcol .flex2 {
+  flex: 2;
+}
+.flexcol .flex3 {
+  flex: 3;
+}
+.flexcol .flex4 {
+  flex: 4;
+}
+/* ----------------------------------------- */
+/*  All WWN Apps                           */
+/* ----------------------------------------- */
+.wwnpretty {
+  /* ----------------------------------------- */
+  /*  Element Styles                           */
+  /* ----------------------------------------- */
+  /* Form Groups */
+  /* Tags */
+}
+.wwnpretty .window-content {
+  background: url("ui/parchment.jpg") repeat;
+  font-size: 13px;
+  color: #191813;
+}
+.wwnpretty input[type="text"],
+.wwnpretty input[type="number"],
+.wwnpretty select {
+  height: calc(100% - 2px);
+  border: 1px solid #7a7971;
+  background: rgba(0, 0, 0, 0.05);
+  color: #191813;
+}
+.wwnpretty input[type="text"]:hover,
+.wwnpretty input[type="number"]:hover,
+.wwnpretty input[type="text"]:focus,
+.wwnpretty input[type="number"]:focus {
+  border: 1px solid #111;
+  box-shadow: 0 0 8px #2301a3;
+}
+.wwnpretty input:disabled,
+.wwnpretty select:disabled,
+.wwnpretty textarea:disabled {
+  color: #2a2a26;
+}
+.wwnpretty input:disabled:hover,
+.wwnpretty select:disabled:hover,
+.wwnpretty textarea:disabled:hover,
+.wwnpretty input:disabled:focus,
+.wwnpretty select:disabled:focus,
+.wwnpretty textarea:disabled:focus {
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+}
+.wwnpretty button {
+  background: rgba(0, 0, 0, 0.27);
+  border: 2px groove #eeede0;
+}
+.wwnpretty label.checkbox {
+  flex: auto;
+  padding: 0;
+  margin: 0;
+  height: 22px;
+  line-height: 22px;
+  font-size: 11px;
+}
+.wwnpretty label.checkbox > input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px 0 0;
+  position: relative;
+  top: 4px;
+}
+.wwnpretty label.checkbox.right > input[type="checkbox"] {
+  margin: 0 0 0 2px;
+}
+.wwnpretty .form-group label {
+  flex: 2;
+  color: #4b4a44;
+  font-weight: bold;
+}
+.wwnpretty .form-group .form-fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.wwnpretty .form-group .form-fields > * {
+  flex: 1;
+}
+.wwnpretty .form-group .form-fields .flex1 {
+  flex: 1;
+}
+.wwnpretty .form-group .form-fields .flex2 {
+  flex: 2;
+}
+.wwnpretty .form-group .form-fields .flex3 {
+  flex: 3;
+}
+.wwnpretty .form-group .form-fields .flex4 {
+  flex: 4;
+}
+.wwnpretty .form-group .form-fields > * {
+  margin: 0 3px 0 0;
+}
+.wwnpretty .form-group .form-fields > *:last-child {
+  margin-right: 0;
+}
+.wwnpretty .form-group.stacked label {
+  flex: 0 0 100%;
+  margin: 0;
+}
+.wwnpretty .form-group.stacked label.checkbox {
+  flex: auto;
+  text-align: left;
+}
+.wwnpretty .form-header {
+  margin: 0 0 0.25em 0;
+  padding: 2px 0;
+  border-top: 2px groove #eeede0;
+  border-bottom: 2px groove #eeede0;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.wwnpretty .tag {
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0 3px;
+  font-size: 10px;
+  line-height: 16px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+/* ----------------------------------------- */
+/*  Entity Sheets Specifically               */
+/* ----------------------------------------- */
+.wwnpretty.sheet {
+  /* ----------------------------------------- */
+  /*  Element Styles                           */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  TinyMCE                                  */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Navigation                         */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Body                               */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  List Filters                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Trait Lists                              */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Items Lists                              */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Active Effects                           */
+  /* ----------------------------------------- */
+}
+.wwnpretty.sheet .window-content {
+  overflow-y: hidden;
+  padding: 5px;
+  background: url("ui/parchment.jpg") repeat;
+  font-size: 13px;
+  color: #191813;
+}
+.wwnpretty.sheet .window-content form {
+  height: 100%;
+  overflow: hidden;
+}
+.wwnpretty.sheet .window-content .tab {
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
+}
+.wwnpretty.sheet input[type="text"],
+.wwnpretty.sheet input[type="number"] {
+  background: none;
+  border: 1px solid transparent;
+}
+.wwnpretty.sheet input[type="text"]:hover,
+.wwnpretty.sheet input[type="number"]:hover,
+.wwnpretty.sheet input[type="text"]:focus,
+.wwnpretty.sheet input[type="number"]:focus {
+  border: 1px solid #111;
+}
+.wwnpretty.sheet select {
+  flex: 1;
+  font-size: 12px;
+  height: 22px;
+  background: transparent;
+}
+.wwnpretty.sheet .editable .rollable:hover {
+  cursor: pointer;
+}
+.wwnpretty.sheet .editable h4.rollable:hover,
+.wwnpretty.sheet .editable .rollable:hover > h4 {
+  color: #000;
+  text-shadow: 0 0 10px #2301a3;
+}
+.wwnpretty.sheet span.sep {
+  flex: none;
+  margin: 0 1px;
+  display: inline;
+  position: relative;
+  color: #7a7971;
+  font-weight: normal;
+}
+.wwnpretty.sheet .editor {
+  height: 100%;
+}
+.wwnpretty.sheet .editor .tox-toolbar-overlord,
+.wwnpretty.sheet .editor .tox-toolbar__primary {
+  background: none;
+}
+.wwnpretty.sheet .sheet-header {
+  flex: 0 0 100px;
+  border-bottom: 2px groove #eeede0;
+  /* Character Name */
+  /* Profile Image */
+  /* Header Summary Details */
+}
+.wwnpretty.sheet .sheet-header .header-details {
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.wwnpretty.sheet .sheet-header h1 {
+  flex: 1;
+  border-bottom: none;
+  height: 60px;
+  margin: 0;
+  padding: 5px;
+}
+.wwnpretty.sheet .sheet-header h1 input {
+  display: block;
+  height: 50px;
+  font-size: 32px;
+  margin: 0;
+}
+.wwnpretty.sheet .sheet-header img.profile {
+  flex: 0 0 100px;
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: none;
+  border-right: 2px groove #eeede0;
+}
+.wwnpretty.sheet .sheet-header .summary {
+  flex: 0 0 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px groove #eeede0;
+  border-bottom: none;
+
+  /*flex-wrap: wrap;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+}
+.wwnpretty.sheet .sheet-header .summary li {
+  height: calc(100% - 6px);
+  float: left;
+  margin: 2px 0;
+  padding: 0;
+  border-right: 2px groove #eeede0;
+  line-height: 34px;
+  color: #4b4a44;
+}
+.wwnpretty.sheet .sheet-header .summary li:last-child {
+  border-right: none;
+}
+.wwnpretty.sheet .sheet-navigation{
+  flex: 0 0 30px;
+  margin-bottom: 5px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.wwnpretty.sheet .sheet-navigation .item {
+  height: 30px;
+  line-height: 32px;
+  margin: 0 24px;
+  border-bottom: 3px solid #b5b3a4;
+}
+.wwnpretty.sheet .sheet-navigation .item:hover {
+  text-shadow: 0 0 10px #2301a3;
+}
+.wwnpretty.sheet .sheet-navigation .item.active {
+  border-bottom: 3px solid rgba(56, 45, 161, 0.62);
+  text-shadow: 0 0 10px #2301a3;
+}
+.wwnpretty.sheet .sheet-body {
+  flex: 1;
+  overflow: hidden;
+}
+.wwnpretty.sheet .filter-list {
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 16px;
+  max-width: 70%;
+}
+.wwnpretty.sheet .filter-list .filter-icon {
+  flex: none;
+  font-size: 14px;
+  color: #7a7971;
+}
+.wwnpretty.sheet .filter-list .filter-item {
+  text-align: center;
+  font-size: 12px;
+  margin: 0 6px 0 0;
+  border-bottom: 3px solid #b5b3a4;
+  white-space: nowrap;
+}
+.wwnpretty.sheet .filter-list .filter-item:last-child {
+  margin: 0;
+}
+.wwnpretty.sheet .filter-list .filter-item:hover {
+  text-shadow: 0 0 4px #2301a3;
+  border-bottom: 3px solid #7a7971;
+}
+.wwnpretty.sheet .filter-list .filter-item.active {
+  border-bottom: 3px solid #2301a3;
+}
+
+
+.wwnpretty.sheet .traits {
+  margin: 5px 0 0;
+}
+.wwnpretty.sheet .traits .trait-selector {
+  flex: 0 0 16px;
+  padding: 2px 0;
+  color: #999;
+  font-size: 10px;
+}
+.wwnpretty.sheet.actor .traits .traits-list {
+  flex: 0 0 100%;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wwnpretty.sheet .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #7a7971;
+}
+.wwnpretty.sheet .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wwnpretty.sheet .items-list .item-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  align-items: center;
+}
+.wwnpretty.sheet .items-list .item-name h3,
+.wwnpretty.sheet .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.wwnpretty.sheet .items-list .item-controls {
+  flex: 0 0 60px;
+  justify-content: space-between;
+}
+.wwnpretty.sheet .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+}
+.wwnpretty.sheet .items-list .item {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+.wwnpretty.sheet .items-list .item:last-child {
+  border-bottom: none;
+}
+.wwnpretty.sheet .items-list .item .item-name {
+  color: #191813;
+}
+.wwnpretty.sheet .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.wwnpretty.sheet .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+}
+.wwnpretty.sheet .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.wwnpretty.sheet .items-list .items-header h3 {
+  padding-left: 5px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  /*font-size: 20px;*/
+  font-weight: 700;
+  text-align: left;
+  font-size: 16px;
+}
+/*.wwnpretty.sheet .items-list .items-header .item-create{*/
+/*  min-width: 0;*/
+/*  max-width: 50px;*/
+/*  background-color: #2a2a26;*/
+/*  padding-right: 5px;*/
+/*}*/
+/*.wwnpretty.sheet .items-list .items-header .item-action{*/
+/*  min-width: 0;*/
+/*  max-width: 30px;*/
+/*}*/
+.wwnpretty.sheet .effects .item .effect-source,
+.wwnpretty.sheet .effects .item .effect-duration,
+.wwnpretty.sheet .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.wwnpretty.sheet .effects .item .effect-controls {
+  border: none;
+}
+/* ----------------------------------------- */
+/* Trait Selector
+/* ----------------------------------------- */
+#trait-selector .trait-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#trait-selector input[type="text"] {
+  height: 24px;
+  margin: 2px;
+}
+/* ----------------------------------------- */
+/*  Property Attribution                     */
+/* ----------------------------------------- */
+.property-attribution {
+  display: none;
+  position: absolute;
+  padding: 3px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  color: #c9c7b8;
+  text-align: left;
+  z-index: 1;
+}
+.property-attribution table {
+  margin: 0;
+  border: 0;
+}
+.property-attribution table tr {
+  background-color: inherit;
+}
+.property-attribution table td {
+  padding: 3px;
+}
+.property-attribution table tr.total > td {
+  font-weight: 600;
+  padding-top: 5px;
+  border-top: 1px solid #7a7971;
+}
+.property-attribution table td.attribution-value {
+  width: 20%;
+  padding-right: 5px;
+  text-align: right;
+  font-weight: 600;
+}
+.property-attribution table td::before {
+  opacity: 0.6;
+}
+.property-attribution table td.mode-1::before {
+  content: "×";
+}
+.property-attribution table td.mode-2::before {
+  content: "+";
+}
+.property-attribution table td.mode-2.negative::before {
+  content: "−";
+  margin-right: -1px;
+}
+.property-attribution table td.mode-3::before {
+  content: "↓";
+}
+.property-attribution table td.mode-4::before {
+  content: "↑";
+}
+.wwnpretty.sheet.actor {
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  General Styles                           */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Attributes                               */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Ability Scores                           */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Skills                                   */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Statuses                                 */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Traits                                   */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Inventory Lists                          */
+  /* ----------------------------------------- */
+  /* Inventory List Filters */
+  /* Encumbrance Bar */
+  /* ----------------------------------------- */
+  /*  Spellbook                                */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  TinyMCE                                  */
+  /* ----------------------------------------- */
+}
+.wwnpretty.sheet.actor .sheet-header img.profile {
+  flex: 0 0 160px;
+  max-width: 160px;
+  height: 160px;
+}
+.wwnpretty.sheet.actor .sheet-header h1.charname {
+  flex: 1;
+  height: 60px;
+  padding: 0;
+}
+.wwnpretty.sheet.actor .sheet-header h1.charname input {
+  height: 40px;
+  margin: 10px 0;
+}
+.wwnpretty.sheet.actor .sheet-header .header-exp {
+  flex: 0 0 150px;
+  margin-right: 3px;
+  height: 60px;
+  justify-content: flex-end;
+  text-align: right;
+}
+.wwnpretty.sheet.actor .sheet-header .summary {
+  height: 30px;
+  /*border-bottom: 2px groove #eeede0;*/
+  font-size: 18px;
+}
+.wwnpretty.sheet.actor .sheet-header .summary input,
+.wwnpretty.sheet.actor .sheet-header .summary span {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+}
+.wwnpretty.sheet.actor .sheet-header .summary input{
+  /*min-width: 0px;*/
+  /*max-width: 20px;*/
+  /*background-color: #2a2a26;*/
+}
+.wwnpretty.sheet.actor .sheet-header .attributes {
+  flex: 0 0 100%;
+  margin: 0;
+  background-color: rgba(36, 69, 231, 0.14);
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .attribute {
+  height: 70px;
+  margin: 0;
+  border: none;
+  border-right: 2px groove #eeede0;
+  border-top: 2px groove #eeede0;
+  border-radius: 0;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .attribute .attribute-value {
+  height: 30px;
+  line-height: 30px;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .movement h4.attribute-name {
+  position: relative;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .movement .config-button {
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 1px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .movement:hover .config-button {
+  display: block;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes input.temphp {
+  width: 48%;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .attribute .property-attribution {
+  min-width: 150px;
+  top: 50px;
+  font-family: Signika, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1rem;
+}
+/*This targets all the titles of boxes- including in resources, header, and attributes*/
+.wwnpretty.sheet.actor h4.box-title {
+  height: 18px;
+  line-height: 16px;
+  margin: 4px 8px 2px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #4b4a44;
+  border-bottom: 1px solid #727076;
+  white-space: nowrap;
+}
+.wwnpretty.sheet.actor .tab.attributes {
+  overflow: hidden;
+}
+/*This targets the larger container, where the boxes themselves are, not contents, of all the stuff below*/
+.wwnpretty.sheet.actor ul.attributes {
+  flex: 0 0 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /*border-top: 2px groove #eeede0;*/
+}
+/*Applies to Resources, saves, and not the header -Lofty*/
+.wwnpretty.sheet.actor ul.attributes li.attribute {
+  height: 60px;
+  margin: 0 5px 0 0;
+  border: 2px groove rgb(175, 175, 175);
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 2px;
+}
+/*Applies to header only -Lofty*/
+.wwnpretty.sheet.actor ul.attributes div.no-sub{
+  padding-top: 7px;
+}
+.wwnpretty.sheet.actor ul.attributes li.attribute:last-child {
+  margin: 0;
+}
+/*This one targets all of the values in attributes*/
+.wwnpretty.sheet.actor ul.attributes li.attribute .attribute-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  line-height: 28px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+/*Lofty modified*/
+.wwnpretty.sheet.actor li.attribute.resource {
+  min-width: 120px;
+  max-width: 150px;
+}
+
+.wwnpretty.sheet.actor ul.attributes li.attribute .attribute-value > * {
+  font-weight: 400;
+  font-size: 24px;
+}
+.wwnpretty.sheet.actor ul.attributes li.attribute .attribute-value.multiple input {
+  flex: 0 0 33%;
+}
+.wwnpretty.sheet.actor ul.attributes li.attribute .attribute-footer {
+  flex: 0 0 18px;
+  margin-top: -1px;
+  line-height: 11px;
+  font-family: "Signika", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  /*opacity: 90%;*/
+}
+.wwnpretty.sheet.actor ul.attributes li.attribute .input-footer {
+  margin-top: -5px;
+  /*background-color: rgba(110, 0, 0, 0.7);*/
+}
+.wwnpretty.sheet.actor ul.attributes li.attribute .input-footer input{
+  max-height: 15px;
+  /*background-color: rgba(110, 0, 0, 0.7);*/
+}
+.wwnpretty.sheet.actor .ability-scores {
+  flex: 0 0 100px;
+  height: 440px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  border: 2px groove #eeede0;
+  border-radius: 3px;
+  background-color: rgba(36, 69, 231, 0.14);
+}
+.wwnpretty.sheet.actor .ability-scores .ability {
+  height: 70px;
+  text-align: center;
+  border-bottom: 2px groove #eeede0;
+}
+.wwnpretty.sheet.actor .ability-scores .ability:last-child {
+  border-bottom: none;
+  margin-bottom: -3px;
+}
+.wwnpretty.sheet.actor .ability-scores .ability input.ability-score {
+  height: 30px;
+  width: 36px;
+  margin: 0 auto;
+  line-height: 32px;
+  font-size: 24px;
+}
+.wwnpretty.sheet.actor .ability-scores .ability .ability-modifiers{
+  height: 24px;
+  margin: -8px 0 0;
+  justify-content: flex-start;
+}
+
+.wwnpretty.sheet.actor .ability-scores .ability .ability-modifiers .ability-other{
+  border-top: 2px groove #eeede0;
+  border-right: 2px groove #eeede0;
+  margin-right: 20px;
+  max-width: 25px;
+  /*margin-bottom:-20px;*/
+  min-height:24px;
+  max-height:24px;
+  font-weight: bold;
+}
+.wwnpretty.sheet.actor .ability-scores .ability .ability-modifiers .ability-right{
+  border-left: 2px groove #eeede0;
+  border-top: 2px groove #eeede0;
+  margin-left: 26px;
+  max-width: 25px;
+  margin-bottom: -5px;
+  min-height:22px;
+  max-height:22px;
+
+}
+.wwnpretty.sheet.actor .ability-scores .ability .ability-modifiers{
+  height: 22px;
+  line-height: 22px;
+  font-size: 16px;
+
+}
+.wwnpretty.sheet.actor li.save-box{
+  background-color: rgba(142, 30, 30, 0.22);
+}
+.wwnpretty.sheet.actor .front-info{
+  margin-top: 5px;
+  flex: 1 0 25%;
+  overflow: hidden;
+}
+.wwnpretty.sheet.actor .info{
+  border: 2px groove #eeede0;
+  flex: 1 0 25%;
+  max-height: 315px;
+  overflow: hidden;
+}
+.wwnpretty.sheet.actor .info textarea{
+  font-size: 13px;
+  font-family: "Signika", serif;
+  resize: none;
+  border: none;
+}
+.wwnpretty.sheet.actor .info textarea:focus{
+  /*outline-color: rgba(62, 32, 155, 0);*/
+  /*outline-width: 2px;*/
+  outline: none;
+  box-shadow: 2px 2px 8px #2301a3;
+  /*background-color: #435fd7;*/
+}
+.wwnpretty.sheet.actor .extras-info{
+  flex: 1 0 25%;
+  font-size: 13px;
+  font-family: "Signika", serif;
+  padding: 40px 4px 4px;
+  margin-top: -38px;
+  resize: none;
+  border: none;
+  max-height: none;
+}
+.wwnpretty.sheet.actor .extras-info textarea{
+  /*outline: 2px groove #eeede0;*/
+  border: 1px solid #c9c7b8;
+}
+.wwnpretty.sheet.actor .extras-list{
+  /*outline: 2px groove #eeede0;*/
+  margin-left: 4px;
+  margin-bottom: 5px;
+}
+.wwnpretty.sheet.actor .tab textarea:focus{
+  /*box-shadow:none;*/
+  outline-color: rgba(39, 41, 132, 0.62);
+  outline-width: 2px;
+  box-shadow: 0 0 8px #2301a3;
+
+  /*padding: 3px 0px 3px 3px;*/
+  /*margin: 5px 1px 3px 0px;*/
+  /*border: 1px solid rgba(81, 203, 238, 1);*/
+  /*outline-color: #3E209B;*/
+  /*box-shadow: #435fd7;*/
+}
+
+
+/*.wwnpretty.sheet.actor .ability-scores .ability .ability-modifiers .ability-proficiency {*/
+/*  line-height: 30px;*/
+/*}*/
+/*.wwnpretty.sheet.actor .ability-scores .ability .ability-modifiers span.ability-save {*/
+/*  border-right: 2px groove #eeede0;*/
+/*}*/
+
+/*.wwnpretty.sheet.actor .proficiency-toggle {*/
+/*  color: #b5b3a4;*/
+/*  font-size: 12px;*/
+/*}*/
+/*.wwnpretty.sheet.actor .proficient .proficiency-toggle {*/
+/*  color: #4b4a44;*/
+/*}*/
+/*.wwnpretty.sheet.actor .locked .proficiency-toggle {*/
+/*  color: #b5b3a4;*/
+/*  text-shadow: none;*/
+/*  cursor: default;*/
+/*}*/
+
+/*This applies to each row (unless overridden by the one lower)*/
+/*.flexrow .two{*/
+/*  !*color:green;*!*/
+/*  !*background: #6e0000;*!*/
+
+/*  !*flex-flow: wrap;*!*/
+/*  !*justify-content: flex-end;*!*/
+/*  !*display: block;*!*/
+/*  !*position: center;*!*/
+/*  !*flex-direction: column;*!*/
+/*  !*overflow: scroll;*!*/
+/*}*/
+
+/*This is the big skill box*/
+.wwnpretty.sheet.actor ul.skills-list {
+  flex: 0 0 180px;
+  height: 440px;
+  list-style: none;
+  margin: 0 5px 0;
+  padding: 3px 0 2px;
+  border: 2px groove #eeede0;
+  border-radius: 3px;
+  max-width: 150px;
+
+  /*min-width: 80px;*/
+  overflow: scroll;
+  /*I'm trying to change scrollbar color, but I don't see a way to. These lines have no effect I think. -Lofty*/
+  scrollbar-base-color: #3E209B;
+  scrollbar-color: blue green;
+}
+/*This controls each line I think*/
+.wwnpretty.sheet.actor ul.skills-list li.skill {
+  height: 24px;
+  padding: 3px 2px;
+  min-width: 120px;
+}
+
+/*Applies to every other row*/
+.wwnpretty.sheet.actor ul.skills-list li.skill:nth-child(even) {
+  background: rgba(0, 0, 100, 0.05);
+}
+/*The ability name. This will stretch to fill box. No I don't know how to change it. -lofty*/
+.wwnpretty.sheet.actor ul.skills-list li.skill h4 {
+  flex: 1px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 19px;
+
+  /*border: 2px groove green;*/
+}
+
+.wwnpretty.sheet.actor ul.skills-list li.skill .skill-mod {
+  flex: 0 0 20px;
+  /*border: 2px groove blue;*/
+  /*border-radius: 2px;*/
+}
+
+.wwnpretty.sheet.actor ul.skills-list li.skill .skill-other {
+  flex: 0 0 25px;
+  /*border: 2px groove orange;*/
+}
+.wwnpretty.sheet.actor .center-pane {
+  height: 100%;
+  padding: 0 5px 0 3px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.wwnpretty.sheet.actor .traits .form-group,
+.wwnpretty.sheet.actor .traits .form-group-stacked {
+  margin: 0 0 3px 0;
+  justify-content: space-between;
+}
+.wwnpretty.sheet.actor .traits .config-button {
+  flex: 1;
+}
+.wwnpretty.sheet.actor .traits label {
+  flex: none;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 0 10px 0 0;
+}
+.wwnpretty.sheet.actor .traits select {
+  max-width: 200px;
+}
+.wwnpretty.sheet.actor .traits input {
+  text-align: right;
+}
+.wwnpretty.sheet.actor .traits i.fas {
+  float: right;
+  margin-right: 3px;
+  text-align: right;
+  color: #999;
+}
+.wwnpretty.sheet.actor i.fas:hover {
+  color: #111;
+  text-shadow: 0 0 10px #2301a3;
+}
+.wwnpretty.sheet a:hover{
+  color: #111;
+  text-shadow: 0 0 10px #2301a3;
+}
+.wwnpretty.sheet.actor .traits .inactive {
+  color: #7a7971;
+}
+.wwnpretty.sheet.actor .tab.features,
+.wwnpretty.sheet.actor .tab.inventory,
+.wwnpretty.sheet.actor .tab.spellbook {
+  overflow-y: hidden;
+}
+.wwnpretty.sheet.actor .inventory-filters {
+  margin: 0 8px;
+  flex: 0 0 20px;
+  justify-content: flex-end;
+}
+.wwnpretty.sheet.actor .inventory-filters .currency {
+  flex: 0 0 100%;
+  list-style: none;
+  margin: 4px 0 8px;
+  padding: 0;
+  font-size: 24px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+}
+.wwnpretty.sheet.actor .inventory-filters .currency label {
+  flex: 0;
+  margin-left: 15px;
+  /*text-align: right;*/
+  /*line-height: 20px;*/
+  color: #383834;
+}
+
+.wwnpretty.sheet.actor .inventory-filters .currency input[type="text"] {
+  flex: 0 0 48px;
+  text-align: center;
+  margin-left: 8px;
+  /*border-bottom: 2px groove rgba(71, 75, 71, 0.46);*/
+  min-width: 90px;
+  font-size: 95%;
+}
+.wwnpretty.sheet.actor .inventory-list {
+  padding: 0 5px;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-name {
+  cursor: pointer;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-name.rollable:hover .item-image {
+  background-image: url("../../icons/svg/d20-grey.svg") !important;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-name.rollable .item-image:hover {
+  background-image: url("../../icons/svg/d20-black.svg") !important;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-name i.attuned {
+  color: #7a7971;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-name i.not-attuned {
+  color: #44191A;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-uses input {
+  width: 24px;
+  text-align: center;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-properties {
+  margin-top: 3px;
+}
+.wwnpretty.sheet.actor .inventory-list .item .item-recharge {
+  flex: 0 0 80px;
+  text-align: right;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.wwnpretty.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
+  flex: 0 0 100%;
+}
+.wwnpretty.sheet.actor .inventory-list .item-detail {
+  flex: 0 0 70px;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.wwnpretty.sheet.actor .inventory-list .item-detail:last-child {
+  border-right: none;
+}
+.wwnpretty.sheet.actor .inventory-list .item-detail.item-action {
+  flex: 0 0 100px;
+}
+/*.wwnpretty.sheet.actor .inventory-list .item-detail.attunement {*/
+/*  flex: 0 0 24px;*/
+/*}*/
+.wwnpretty.sheet.actor .inventory-list .item-weight {
+  flex: 0 0 60px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+}
+.wwnpretty.sheet.actor .inventory-list .item-location-inv{
+  flex: 0 0 100px;
+  border-left: 1px solid #c9c7b8;
+  border-right: none;
+  /*background-color: #07aa09;*/
+  text-align: center;
+  min-width: 60px;
+  max-width: 100px;
+}
+.wwnpretty.sheet.actor .inventory-list .item-controls {
+  flex: 0 0 44px;
+}
+/*Right now, this below will target the trash and inventory icons in inventory. You can change the min and max width here -Lofty*/
+/*.wwnpretty.sheet.actor .inventory-list .inventory-icons{*/
+/*  !*background-color: #2a2a26;*!*/
+/*  min-width: 0;*/
+/*  max-width: 50px;*/
+/*}*/
+.wwnpretty.sheet.actor .inventory-list .item-summary {
+  flex: 0 0 100%;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0.25em 0.5em;
+  color: #191813;
+  border-top: 1px solid #c9c7b8;
+}
+.wwnpretty.sheet.actor .encumbrance {
+  flex: 0 0 12px;
+  background: #7a7971;
+  margin: 1px 15px 0 1px;
+  border: 1px solid #191813;
+  border-radius: 3px;
+  position: relative;
+}
+.wwnpretty.sheet.actor .encumbrance .encumbrance-bar {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #89acd0;
+  height: 8px;
+  border: 1px solid #435fd7;
+  border-radius: 2px;
+}
+.wwnpretty.sheet.actor .encumbrance .readied{
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #56bd6c;
+  height: 8px;
+  border: 1px solid #435fd7;
+  border-radius: 2px;
+}
+.wwnpretty.sheet.actor .encumbrance .encumbrance-label {
+  height: 10px;
+  padding: 0 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 13px;
+  line-height: 12px;
+  text-align: right;
+  color: #EEE;
+  text-shadow: 0 0 5px #000;
+}
+.wwnpretty.sheet.actor .encumbrance .encumbrance-breakpoint {
+  display: block;
+  position: absolute;
+}
+.wwnpretty.sheet.actor .encumbrance .encumbrance-breakpoint.encumbrance-33 {
+  left: 33%;
+}
+.wwnpretty.sheet.actor .encumbrance .encumbrance-breakpoint.encumbrance-66 {
+  left: 66%;
+}
+.wwnpretty.sheet.actor .encumbrance .arrow-up {
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #666;
+}
+.wwnpretty.sheet.actor .encumbrance .arrow-down {
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #666;
+}
+.wwnpretty.sheet.actor .encumbrance.encumbered .arrow-up {
+  border-bottom: 4px solid #000;
+}
+.wwnpretty.sheet.actor .encumbrance.encumbered .arrow-down {
+  border-top: 4px solid #000;
+}
+.wwnpretty.sheet.actor .effort-box{
+  max-width: 20px;
+  padding: 0;
+  margin: 0;
+}
+/*.wwnpretty.sheet.actor .strain-box{*/
+/*  max-width: 15px;*/
+/*}*/
+.wwnpretty.sheet.actor .spellcasting-ability {
+  flex: 0 0 240px;
+  margin: 0;
+  min-width: 260px;
+
+}
+.wwnpretty.sheet.actor .spellcasting-ability label,
+.wwnpretty.sheet.actor .spellcasting-ability span {
+  flex: none;
+}
+.wwnpretty.sheet.actor .spellcasting-ability input {
+  flex: 0 0 28px;
+  text-align: center;
+}
+.wwnpretty.sheet.actor .spellcasting-ability select {
+  margin: 0 5px;
+  flex: 0 0 120px;
+}
+.wwnpretty.sheet.actor .spell-slots,
+.wwnpretty.sheet.actor .spell-comps {
+  flex: none;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #7a7971;
+  border-right: 1px solid #c9c7b8;
+}
+.wwnpretty.sheet.actor .spell-slots input {
+  display: inline;
+  max-width: 20px;
+}
+.wwnpretty.sheet.actor .spell-slots .sep {
+  font-size: 13px;
+  font-weight: normal;
+}
+.wwnpretty.sheet.actor .spellbook .spell-uses {
+  padding-right: 5px;
+  text-align: right;
+  color: #7a7971;
+}
+.wwnpretty.sheet.actor .spell-school,
+.wwnpretty.sheet.actor .spell-action,
+.wwnpretty.sheet.actor .spell-target {
+  flex: 0 0 100px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+}
+.wwnpretty.sheet.actor .spell-component {
+  line-height: 14px;
+}
+.wwnpretty.sheet.actor .spell-component.C,
+.wwnpretty.sheet.actor .spell-component.R {
+  display: inline-block;
+  text-align: center;
+  padding-top: 1px;
+  width: 16px;
+  color: #c9c7b8;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+.wwnpretty.sheet.actor .spellbook-empty .item-controls {
+  flex: 1;
+}
+.wwnpretty.sheet.actor .editor {
+  padding: 0 8px;
+}
+#actor-flags .window-content {
+  overflow-y: hidden;
+}
+#actor-flags form {
+  height: 100%;
+}
+#actor-flags .form-body {
+  height: calc(100% - 40px);
+  padding-right: 8px;
+  margin-bottom: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.wwnpretty.sheet.item {
+  min-height: 400px;
+  max-height: 95%;
+  min-width: 480px;
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Details Form                        */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Actions                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Actions                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Loot Sheet (No Tabs)                     */
+  /* ----------------------------------------- */
+}
+.wwnpretty.sheet.item .sheet-header img.profile {
+  border: 2px solid #000;
+}
+.wwnpretty.sheet.item .sheet-header .item-subtitle {
+  flex: 0 0 100px;
+  height: 60px;
+  margin: 0;
+  padding: 5px;
+  text-align: right;
+  color: #7a7971;
+}
+.wwnpretty.sheet.item .sheet-header .item-subtitle .item-type {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0;
+}
+.wwnpretty.sheet.item .sheet-header .item-subtitle .item-status {
+  font-size: 16px;
+  line-height: 24px;
+}
+.wwnpretty.sheet.item .sheet-navigation {
+  margin-bottom: 5px;
+}
+.wwnpretty.sheet.item .sheet-navigation .item {
+  font-size: 18px;
+}
+.wwnpretty.sheet.item .sheet-body {
+  overflow: hidden;
+}
+.wwnpretty.sheet.item .sheet-body .tab {
+  padding: 0 5px;
+  overflow: hidden auto;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties {
+  flex: 0 0 120px;
+  margin: 5px 5px 5px 0;
+  padding-right: 5px;
+  border-right: 2px groove #eeede0;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties .item-location{
+  text-align: center;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties .form-group {
+  margin: 0;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties .form-group label {
+  line-height: 20px;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties .form-group input {
+  text-align: right;
+}
+.wwnpretty.sheet.item .sheet-body .tech-level input{
+  max-width: 23px;
+}
+.wwnpretty.sheet.item .sheet-body .form-group .mag input {
+  min-width: 0px;
+  max-width: 57%;
+}
+.wwnpretty.sheet.item .sheet-body .form-group .mag{
+  /*This controls the mag size text box. It grows slightly more than the others, and is annoying. But I don't see how to change it. -lofty*/
+  justify-content: flex-end;
+  margin-right: 0;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties .properties-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wwnpretty.sheet.item .sheet-body .item-properties .properties-list li {
+  margin: 3px 0;
+  padding: 0 2px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+.wwnpretty.sheet.item .details input[type="text"],
+.wwnpretty.sheet.item .details input[type="number"],
+.wwnpretty.sheet.item .details select {
+  height: 24px;
+  border: 1px solid #7a7971;
+  background: rgba(0, 0, 0, 0.05);
+}
+.wwnpretty.sheet.item .details .form-group span {
+  text-align: center;
+  line-height: 24px;
+}
+.wwnpretty.sheet.item .details .form-group.input-select select {
+  flex: 1.8;
+}
+.wwnpretty.sheet.item .details .form-group.input-select-select select {
+  flex: 1.5;
+}
+.wwnpretty.sheet.item .details .form-group.uses-per .form-fields {
+  flex-wrap: nowrap;
+}
+.wwnpretty.sheet.item .details .form-group.uses-per input {
+  flex: 0 0 32px;
+}
+.wwnpretty.sheet.item .details .form-group.uses-per span {
+  flex: 0 0 16px;
+  margin: 0 4px 0 0;
+}
+.wwnpretty.sheet.item .details span.sep {
+  flex: 0 0 8px;
+}
+.wwnpretty.sheet.item .details .prepared {
+  flex: 1.3 !important;
+  text-align: right;
+  padding-right: 10px;
+}
+.wwnpretty.sheet.item .details .spell-materials {
+  flex: 0 0 100%;
+  margin: 0.25em 0;
+  justify-content: flex-end;
+}
+.wwnpretty.sheet.item .details .spell-materials label {
+  flex: 0 0 64px;
+  text-align: right;
+  margin-right: 5px;
+  font-size: 12px;
+  line-height: 24px;
+}
+.wwnpretty.sheet.item .details .spell-materials input[type="text"] {
+  flex: 0 0 48px;
+  margin-right: 10px;
+}
+.wwnpretty.sheet.item h4.damage-header {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 24px;
+  color: #4b4a44;
+}
+.wwnpretty.sheet.item .damage-parts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wwnpretty.sheet.item .damage-parts .damage-part {
+  flex: 0 0 100%;
+  padding: 0;
+}
+.wwnpretty.sheet.item .damage-parts .damage-part input {
+  flex: 3;
+}
+.wwnpretty.sheet.item .damage-parts .damage-part select {
+  margin-left: 5px;
+  flex: 1;
+}
+.wwnpretty.sheet.item .damage-control {
+  width: 18px;
+  flex: 0 0 18px;
+  line-height: 24px;
+  float: right;
+  text-align: right;
+  color: #7a7971;
+}
+.wwnpretty.sheet.item .recharge.form-group span {
+  text-align: right;
+  padding-right: 3px;
+}
+.wwnpretty.sheet.item .recharge.form-group input[type="text"] {
+  flex: 0 0 32px;
+  text-align: center;
+}
+.wwnpretty.sheet.item .recharge.form-group label.checkbox {
+  flex: none;
+}
+.wwnpretty.sheet.item .recharge.form-group label.checkbox input {
+  width: 16px;
+  height: 16px;
+  top: 4px;
+}
+.wwnpretty.sheet.item .weapon-properties label.checkbox {
+  flex: 0 0 98px;
+}
+.wwnpretty.sheet.item .loot-header {
+  margin-bottom: 10px;
+}
+/* ----------------------------------------- */
+/*  Chat Cards
+/* ----------------------------------------- */
+.wwnpretty.chat-card {
+  font-style: normal;
+  font-size: 12px;
+}
+.wwnpretty.chat-card .card-header {
+  padding: 3px 0;
+  border-top: 2px groove #FFF;
+  border-bottom: 2px groove #FFF;
+}
+.wwnpretty.chat-card .card-header img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+}
+.wwnpretty.chat-card .card-header h3 {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #4b4a44;
+}
+.wwnpretty.chat-card .card-header h3:hover {
+  color: #111;
+  text-shadow: 0 0 10px #2301a3;
+}
+.wwnpretty.chat-card .card-content {
+  margin: 5px 0;
+}
+.wwnpretty.chat-card .card-content h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
+.wwnpretty.chat-card .card-content > * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.wwnpretty.chat-card .card-buttons {
+  margin: 5px 0;
+}
+.wwnpretty.chat-card .card-buttons span {
+  display: block;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #CCC;
+}
+.wwnpretty.chat-card .card-buttons button {
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+.wwnpretty.chat-card .card-footer {
+  padding: 3px 0 0;
+  border-top: 2px groove #FFF;
+}
+.wwnpretty.chat-card .card-footer span {
+  border-right: 2px groove #FFF;
+  padding: 0 3px 0 0;
+  font-size: 10px;
+}
+.wwnpretty.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.dice-roll .dice-total.success {
+  color: inherit;
+  background: #c7d0c0;
+  border: 1px solid #006c00;
+}
+.dice-roll .dice-total.failure {
+  color: inherit;
+  background: #ffdddd;
+  border: 1px solid #6e0000;
+}
+.dice-roll .dice-total.critical {
+  color: green;
+}
+.dice-roll .dice-total.fumble {
+  color: red;
+}
+/* ----------------------------------------- */
+/*  Basic Structure                          */
+/* ----------------------------------------- */
+.wwnpretty.sheet.actor.character {
+  min-width: 720px;
+  min-height: 680px;
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Body                               */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Controls                            */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Biography                                */
+  /* ----------------------------------------- */
+}
+.wwnpretty.sheet.actor.character .sheet-header img.profile {
+  flex: 0 0 160px;
+  max-width: 160px;
+  height: 160px;
+}
+.wwnpretty.sheet.actor.character .sheet-header .feedback{
+  position: relative;
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "Signika", sans-serif;
+  float: right;
+  color: rgba(56, 56, 52, 0.49);
+  /*text-shadow: rgba(62, 32, 155, 0.45);*/
+  min-width: 0;
+  max-width: 90px;
+  max-height: 17px;
+  line-height: 17px;
+  margin-bottom: 25px;
+  margin-left: 63px;
+  /*background-color: #435fd7;*/
+  /*left: 300px;*/
+}
+/*.wwnpretty.sheet.actor.character .sheet-header .feedback:hover{*/
+/*  color: #2a2a26;*/
+/*  text-shadow: rgba(62, 32, 155, 0.45); !important*/
+/*}*/
+.wwnpretty.sheet.actor.character .sheet-header .charlevel {
+  flex: 0 0 20px;
+  height: 20px;
+  font-size: 18px;
+  color: #7a7971;
+  white-space: nowrap;
+}
+.wwnpretty.sheet.actor.character .sheet-header .charlevel .levelInput{
+  width: 10px;
+}
+.wwnpretty.sheet.actor.npc .sheet-header .charlevel .levelInput{
+  width: 15px;
+  /*height: 40px;*/
+}
+.wwnpretty.sheet.actor.character .sheet-header .experience {
+  flex: 0 0 32px;
+  margin-bottom: -5px;
+  align-items: center;
+  font-size: 18px;
+}
+.wwnpretty.sheet.actor.character .sheet-header .experience span.max {
+  color: #7a7971;
+  flex: none;
+  margin-left: 3px;
+}
+.wwnpretty.sheet.actor.character .sheet-header .xpbar {
+  flex: 0 0 8px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #7a7971;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.wwnpretty.sheet.actor.character .sheet-header .xpbar .bar {
+  height: 4px;
+  margin: 1px;
+  display: block;
+  background: #afebff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.wwnpretty.sheet.actor.character .sheet-header .attributes .hit-dice {
+  font-size: 24px;
+}
+.wwnpretty.sheet.actor.npc .sheet-header .summary li:first-child {
+  border-left: 2px groove #eeede0;
+}
+.wwnpretty.sheet.actor.npc .sheet-header .summary li:last-child {
+  border-right: 2px groove #eeede0;
+}
+/*NPC attitude select*/
+.wwnpretty.sheet.actor.npc .sheet-header .summary .attitude {
+  margin-bottom: 5px;
+  min-width: 0;
+  /*max-width: 95%;*/
+  padding-left: 5px;
+  /*margin-left: 5px;*/
+}
+/*NPC text area*/
+.wwnpretty.sheet.actor.npc .npc-text-area{
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-family: "Signika", sans-serif;
+  resize: none;
+  outline: none;
+}
+/*Header box manipulation*/
+.wwnpretty.sheet.actor .sheet-header .header-boxes{
+  background-color: rgba(36, 69, 231, 0.14);
+  /*max-height: 30px;*/
+}
+.wwnpretty.sheet.actor .sheet-header .header-boxes li{
+  padding-left: 5px;
+  line-height: 20px;
+  /*padding-bottom: 15px;*/
+
+}
+.wwnpretty.sheet.actor .sheet-header .header-boxes input{
+  /*background-color: rgba(0, 37, 110, 0.46);*/
+  min-width: 0px;
+  max-width: 27px;
+  display: inline;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .initiative{
+  border-right: 2px groove #eeede0;
+}
+.wwnpretty.sheet.actor .sheet-header .attributes .health{
+  border-left: 2px groove #eeede0;
+}
+.wwnpretty.sheet.actor.character .resource .attribute-value input {
+  flex: 0 0 25%;
+}
+.wwnpretty.sheet.actor.character .sheet-header .currencylist{
+  /*background-color: #56bd6c;*/
+  min-width: 0px;
+  max-width: 150px;
+  border-right: none;
+}
+.wwnpretty.sheet.actor.character .sheet-header .currencyimage{
+  min-width: 0px;
+  max-width: 27px;
+  padding-left: 1px;
+  padding-bottom: 6px;
+  border-left: none;
+  line-height: 150%;
+}
+/*.wwnpretty.sheet.actor.npc .custom-resource,*/
+.wwnpretty.sheet.actor.character .custom-resource{
+  flex: 0 0 25%;
+  height: 21px;
+}
+/*.wwnpretty.sheet.actor.npc .custom-resource input,*/
+.wwnpretty.sheet.actor.character .custom-resource input{
+  height: 18px;
+  line-height: 16px;
+  margin: 4px 8px 2px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #4b4a44;
+  border-bottom: 1px solid #727076;
+  white-space: nowrap;
+  max-width: 130px;
+}
+/*This is me making custom resource VALUES format to match everything else -Lofty*/
+.wwnpretty.sheet.actor.character .custom-value{
+  height: 20px;
+  line-height: 20px;
+  padding-top: 0;
+  margin-top: -5px;
+  /*background-color: #6e0000;*/
+}
+.wwnpretty.sheet.actor.character .char-counter input{
+  white-space: nowrap;
+  min-width: 130px;
+  /*max-width: 200px;*/
+  /*background-color: #6e0000;*/
+}
+
+.wwnpretty.sheet.actor.character ul.skills-list {
+  flex: 0 0 212px;
+}
+.wwnpretty.sheet.actor.character ul.skills-list li.skill {
+  padding: 3px;
+}
+.wwnpretty.sheet.actor.character ul.skills-list li.skill h4 {
+  flex: 1px;
+  margin: 0;
+  font-size: 13px;
+}
+.wwnpretty.sheet.actor.character .item-detail.player-class {
+  flex: 0 0 180px;
+  text-align: right;
+  padding-right: 10px;
+}
+.wwnpretty.sheet.actor.character .inventory .item-controls,
+.wwnpretty.sheet.actor.character .spellbook .item-controls {
+  flex: 0 0 68px;
+  /*background-color: rgba(0, 108, 0, 0.44);*/
+  text-shadow: #435fd7;
+}
+.wwnpretty.sheet.actor.character .inventory .item-controls .item-toggle,
+.wwnpretty.sheet.actor.character .spellbook .item-controls .item-toggle {
+  color: #b5b3a4;
+}
+.wwnpretty.sheet.actor.character .inventory .item-controls .item-toggle.active,
+.wwnpretty.sheet.actor.character .spellbook .item-controls .item-toggle.active {
+  color: #4b4a44;
+}
+.wwnpretty.sheet.actor.character .inventory .item-controls .item-toggle.fixed,
+.wwnpretty.sheet.actor.character .spellbook .item-controls .item-toggle.fixed {
+  color: #193844;
+}
+.wwnpretty.sheet.actor.character .inventory .item-controls .item-toggle.fixed:hover,
+.wwnpretty.sheet.actor.character .spellbook .item-controls .item-toggle.fixed:hover {
+  text-shadow: none;
+  /*background-color: #006c00;*/
+}
+.wwnpretty.sheet.actor .characteristics {
+  flex: 0 0 180px;
+  height: 100%;
+  padding: 0 3px 3px;
+}
+.wwnpretty.sheet.actor .characteristics label {
+  flex: 0 0 20px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  /*font-size: 20px;*/
+  /*font-weight: 700;*/
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+  text-align: center;
+}
+.wwnpretty.sheet.actor .characteristics textarea {
+  font-family: "Signika", serif;
+  font-size: 13px;
+  border: 1px solid #c9c7b8;
+  resize: none;
+}
+.wwnpretty.sheet.actor .biography {
+  max-width: calc(100% - 180px);
+}
+/* ----------------------------------------- */
+/*  Basic Structure                          */
+/* ----------------------------------------- */
+.wwnpretty.sheet.actor.npc {
+  min-width: 600px;
+  min-height: 680px;
+}
+.wwnpretty.sheet.actor.npc .header-exp {
+  flex: 0 0 80px;
+  justify-content: center;
+}
+.wwnpretty.sheet.actor.npc .header-exp .cr {
+  flex: 0 0 32px;
+  line-height: 28px;
+  margin-bottom: -5px;
+  font-size: 24px;
+}
+.wwnpretty.sheet.actor.npc .header-exp .cr input {
+  width: 32px;
+  padding: 0;
+  text-align: center;
+}
+.wwnpretty.sheet.actor.npc .header-exp .experience {
+  flex: 0 0 18px;
+  color: #7a7971;
+  font-size: 16px;
+}
+.wwnpretty.sheet.actor.npc .summary {
+  font-size: 18px;
+}
+

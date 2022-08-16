@@ -1,0 +1,94 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- Item Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+
+        <div class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'WWNPRETTY.ItemName' }}"/>
+            </h1>
+
+            <div class="item-subtitle">
+                <h4 class="item-type">{{itemType}}</h4>
+                <span class="item-status">{{itemStatus}}</span>
+            </div>
+
+            <ul class="summary flexrow">
+                <li>
+                    {{lookup config.consumableTypes data.consumableType }}
+                </li>
+                <li>
+                    <input type="text" name="data.rarity" value="{{data.rarity}}" placeholder="{{ localize 'WWNPRETTY.Rarity' }}"/>
+                </li>
+                <li>
+                    <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'WWNPRETTY.Source' }}"/>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    {{!-- Item Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="description">{{ localize "WWNPRETTY.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "WWNPRETTY.Details" }}</a>
+    </nav>
+
+    {{!-- Item Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        {{> "systems/wwnpretty/templates/items/parts/item-description.html"}}
+
+        {{!-- Details Tab --}}
+        <div class="tab details" data-group="primary" data-tab="details">
+            <h3 class="form-header">{{ localize "WWNPRETTY.ItemConsumableDetails" }}</h3>
+
+            {{!-- Consumable Type --}}
+            <div class="form-group">
+                <label>{{ localize "WWNPRETTY.ItemConsumableType" }}</label>
+                <select name="data.consumableType">
+                    {{#select data.consumableType}}
+                    {{#each config.consumableTypes as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+<!--            <div class="form-group">-->
+<!--                <label>{{localize "WWNPRETTY.Attunement"}}</label>-->
+<!--                <select name="data.attunement" data-dtype="Number">-->
+<!--                    {{selectOptions config.attunements selected=data.attunement localize=true}}-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <div class="form-group stacked">-->
+<!--                <label>{{ localize "WWNPRETTY.ItemConsumableStatus" }}</label>-->
+<!--                <label class="checkbox">-->
+<!--                    <input type="checkbox" name="data.equipped" {{checked data.equipped}}/> {{ localize "WWNPRETTY.Equipped" }}-->
+<!--                </label>-->
+<!--                <label class="checkbox">-->
+<!--                    <input type="checkbox" name="data.identified" {{checked data.identified}}/> {{ localize "WWNPRETTY.Identified" }}-->
+<!--                </label>-->
+<!--            </div>-->
+
+            <h3 class="form-header">{{ localize "WWNPRETTY.ItemConsumableUsage" }}</h3>
+
+            {{!-- Item Activation Template --}}
+            {{> "systems/wwnpretty/templates/items/parts/item-activation.html"}}
+            {{#if data.activation.type}}
+            <div class="form-group">
+                <label class="checkbox">
+                    <input type="checkbox" name="data.uses.autoDestroy" {{checked data.uses.autoDestroy}}/> {{ localize "WWNPRETTY.ItemDestroyEmpty" }}
+                </label>
+            </div>
+            {{/if}}
+
+            <h3 class="form-header">{{ localize "WWNPRETTY.ItemConsumableActivation" }}</h3>
+
+            {{!-- Item Action Template --}}
+            {{> "systems/wwnpretty/templates/items/parts/item-action.html"}}
+        </div>
+    </section>
+</form>

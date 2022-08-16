@@ -1,0 +1,2 @@
+- Contributors to the [Atropos character sheet](https://gitlab.com/foundrynet/dnd5e)
+- Sorellia

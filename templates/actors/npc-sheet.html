@@ -1,362 +1,263 @@
-<form class="{{cssClass}} bg-gray-200 -m-2 p-2 space-y-2">
-  <div>
-    <div class="flex gap-2">
-      <div class="flex-shrink-0 h-40 hidden md:block lg:h-16 md:w-16">
-        <img
-          class="shadow-md bg-gray-100 h-full w-full object-contain"
-          src="{{actor.img}}"
-          title="{{actor.name}}"
-          data-edit="img"
-        />
-      </div>
-      <div class="flex-grow grid grid-cols-1 lg:grid-cols-6 items-center gap-2">
-        <input
-          class="text-2xl col-span-3 px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          name="name"
-          type="text"
-          value="{{actor.name}}"
-          placeholder="{{localize 'swnr.sheet.name'}}"
-        />
-        <h2 class="col-span-3 flex items-center gap-2">
-          <select
-            class="flex-grow w-full border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-            name="data.reaction"
-          >
-            {{#select actor.data.reaction}}
-            <option value="unknown">
-              {{localize 'swnr.npc.reaction.unknown'}}
-            </option>
-            <option value="hostile">
-              {{localize 'swnr.npc.reaction.hostile'}}
-            </option>
-            <option value="negative">
-              {{localize 'swnr.npc.reaction.negative'}}
-            </option>
-            <option value="neutral">
-              {{localize 'swnr.npc.reaction.neutral'}}
-            </option>
-            <option value="positive">
-              {{localize 'swnr.npc.reaction.positive'}}
-            </option>
-            <option value="friendly">
-              {{localize 'swnr.npc.reaction.friendly'}}
-            </option>
-            {{/select}}
-          </select>
-          <a class="reaction">
-            <i class="fa fa-dice-d6"></i>
-          </a>
-        </h2>
-        <input
-          class="hidden sm:block col-span-2 border px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          name="data.species"
-          type="text"
-          value="{{actor.data.species}}"
-          placeholder="{{localize 'swnr.sheet.species'}}"
-        />
-        <input
-          class="hidden sm:block col-span-2 border px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          name="data.homeworld"
-          value="{{actor.data.homeworld}}"
-          placeholder="{{localize 'swnr.sheet.homeworld'}}"
-          type="text"
-        />
-        <input
-          class="hidden sm:block col-span-2 border px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          name="data.faction"
-          value="{{actor.data.faction}}"
-          placeholder="{{localize 'swnr.sheet.faction'}}"
-          type="text"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between w-full border p-1 gap-2 border-trueGray-600 rounded-md bg-trueGray-300"
-  >
-    <div class="flex flex-col gap-1">
-      <h3 class="text-lg">{{localize 'swnr.sheet.stats'}}</h3>
-      <div>
-        {{localize 'swnr.sheet.hp'}}:
-        <input
-          class="w-8 border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="number"
-          name="data.health.value"
-          min="0"
-          step="1"
-          value="{{data.health.value}}"
-        />/<input
-          class="w-8 border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="number"
-          name="data.health.max"
-          min="0"
-          step="1"
-          value="{{data.health.max}}"
-        />
-      </div>
-      <div>
-        {{localize 'swnr.sheet.armor-class'}}:
-        <input
-          class="w-8 border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="number"
-          name="data.baseAc"
-          min="0"
-          step="1"
-          value="{{data.baseAc}}"
-        />
-      </div>
-      <div>
-        {{localize 'swnr.armor.type.label'}}:
-        <select
-          name="data.armorType"
-          class="border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-        >
-          {{#select data.armorType}}
-          <option value="primitive">
-            {{localize 'swnr.armor.type.primitive'}}
-          </option>
-          <option value="street">{{localize 'swnr.armor.type.street'}}</option>
-          <option value="combat">{{localize 'swnr.armor.type.combat'}}</option>
-          <option value="powered">
-            {{localize 'swnr.armor.type.powered'}}
-          </option>
-          {{/select}}
-        </select>
-      </div>
-      <div class="flex items-baseline gap-1">
-        {{localize 'swnr.sheet.movement'}}:
-        <div class="flex w-16">
-          <input
-            class="border border-r-0 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-l-md text-right"
-            type="number"
-            name="data.speed"
-            min="0"
-            step="1"
-            value="{{data.speed}}"
-          />
-          <div
-            class="border border-l-0 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-r-md text-base pl-0.5 pr-1"
-          >
-            m
-          </div>
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- NPC Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        <section class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'WWNPRETTY.Name' }}"/>
+            </h1>
+
+<!--            Lofty adding character level to npc just for easy power upgrade-->
+            <aside class="header-exp flexcol">
+                <div class="charlevel" title="{{multiclassLabels}}">
+                    <label> {{ localize "WWNPRETTY.Level" }} </label>
+                    <input class = "levelInput" name = "data.attributes.level.value" type = "number" value = "{{data.attributes.level.value}}" placeholder="0" data-dtype="Number"/>
+                    <span class="levels">{{classLabels}}</span>
+                </div>
+            </aside>
+
+            {{!-- Header Attributes --}}
+            <ul class="attributes flexrow">
+                <li class="attribute health no-sub">
+                    <h4 class="attribute-name box-title">{{ localize "WWNPRETTY.HitPoints" }}</h4>
+                    <div class="attribute-value multiple no-sub">
+                        <input name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}" placeholder="10" data-dtype="Number"/>
+                        <span class="sep"> / </span>
+                        <input name="data.attributes.hp.max" type="text" value="{{data.attributes.hp.max}}" placeholder="10" data-dtype="Number"/>
+                    </div>
+                </li>
+
+                <li class="attribute">
+                    <h4 class="attribute-name box-title">{{ localize "WWNPRETTY.HitDice" }}</h4>
+                    <div class="attribute-value no-sub">
+                        <input name="data.npcHitDice" class="hit-dice" type="text" value="{{data.npcHitDice}}" placeholder="1"/>
+                    </div>
+                </li>
+
+                <li class="attribute">
+                    <h4 class="attribute-name box-title">{{ localize "WWNPRETTY.ArmorClass" }}</h4>
+                    <div class="attribute-value no-sub">
+                        <input name="data.attributes.ac.npc" type="number" value="{{data.attributes.ac.npc}}" placeholder="10"/>
+                    </div>
+                </li>
+
+                <li class="attribute movement">
+                    <h4 class="attribute-name box-title">
+                        {{ localize "WWNPRETTY.Movement" }}
+                        <a class="config-button" data-action="movement" title="{{localize 'WWNPRETTY.MovementConfig'}}"><i class="fas fa-cog"></i></a>
+                    </h4>
+                    <div class="attribute-value">
+                        <span>{{movement.primary}}</span>
+                    </div>
+                    <footer class="attribute-footer">
+                        <span>{{movement.special}}</span>
+                    </footer>
+                </li>
+
+                <li class="attribute initiative">
+<!--                    <h4 class="attribute-name box-title rollable" data-action="rollInitiative">{{ localize "WWNPRETTY.Initiative" }}</h4>-->
+                    <h4 class="attribute-name box-title">{{ localize "WWNPRETTY.Initiative" }}</h4>
+                    <div class="attribute-value">
+                        <span>{{numberFormat data.attributes.init.total decimals=0 sign=true}}</span>
+                    </div>
+<!--                    <div class="attribute-value no-sub">-->
+<!--                        <input name="data.attributes.init.total" type="number" value="{{data.attributes.init.total}}" placeholder="0"/>-->
+<!--                    </div>-->
+                    <footer class="attribute-footer input-footer">
+<!--                        <span class="spell-dc">{{localize "WWNPRETTY.BaseAC"}}: {{data.attributes.base}}</span>-->
+                        <input name="data.attributes.init.custom" type="number" value="{{data.attributes.init.custom}}" placeholder="0" title="Bonus"  />
+                    </footer>
+                </li>
+            </ul>
+
+            {{!-- Character Summary --}}
+            <ul class="summary flexrow header-boxes">
+                <li>
+                    <label> # of Atks: &nbsp
+                        <input type="text" name="data.attributes.attacks" value="{{data.attributes.attacks}}" placeholder=1 />
+                    </label>
+                </li>
+                <li>
+                    <label> Att Bonus: &nbsp
+                        <input type="text" name="data.attackBonus" value="{{data.attackBonus}}" id="attbonus" placeholder="0"/>
+                    </label>
+                </li>
+
+                <li>
+                    <label> Dam Bonus: &nbsp
+                        <input type="text" name="data.damageBonus" value="{{data.damageBonus}}" placeholder="0"/>
+                    </label>
+                </li>
+                <li>
+                    <select name="data.attitude.type" class="attitude" title="Attitude">
+                        {{#select data.attitude.type}}
+                        {{#each config.attitudes as |name type|}}
+                          <option value="{{type}}">{{localize name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </li>
+            </ul>
+
+        </section>
+    </header>
+
+    {{!-- NPC Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="attributes">{{ localize "WWNPRETTY.Attributes" }}</a>
+        <a class="item" data-tab="features">{{ localize "WWNPRETTY.Features" }}</a>
+        <a class="item" data-tab="spellbook">{{ localize "WWNPRETTY.Spellbook" }}</a>
+        <a class="item" data-tab="effects">{{ localize "WWNPRETTY.SenseEffects" }}</a>
+        <a class="item" data-tab="biography">{{ localize "WWNPRETTY.Biography" }}</a>
+    </nav>
+
+    {{!-- NPC Sheet Body --}}
+    <section class="sheet-body">
+        <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+
+            {{!-- Ability Scores --}}
+            <ul class="ability-scores flexrow">
+                {{#each data.abilities as |ability id|}}
+                <li class="ability" data-ability="{{id}}">
+                    <h4 class="ability-name box-title rollable">{{ability.label}}</h4>
+                    <input class="ability-score" name="data.abilities.{{id}}.value" type="number" value="{{ability.value}}" placeholder="10"/>
+                    <div class="ability-modifiers flexrow">
+                        <input class="ability-mod ability-other" title="Other" name="data.abilities.{{id}}.other" type = "number" value="{{ability.other}}" placeholder = "0"/>
+                        <span class="ability-mod ability-right" title="Modifier" id="att-mod">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+
+            {{!-- Skills --}}
+            <ul class="skills-list">
+                {{#each data.skills as |skill s|}}
+                <li class="skill flexrow" data-skill="{{s}}">
+                    <h4 class="skill-name rollable">{{skill.label}}</h4>
+                    <input class="skill-mod" name = "data.skills.{{s}}.value" value="{{skill.value}}"
+                           title = "Level" type="number" placeholder="-1" />
+                    <input class="skill-other" name = "data.skills.{{s}}.prof" value="{{skill.prof}}"
+                           title = "Other" type="number" placeholder="0" />
+                </li>
+                {{/each}}
+            </ul>
+
+<!--            Right side of the sheet-->
+            <section class="center-pane flexcol">
+                <ul class="attributes flexrow boxes">
+<!--                                        Save buttons from Lofty-->
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves = "psave"> Physical Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.psave" type="text"> vs {{data.attributes.saves.psave}} </span>
+                        </div>
+                    </li>
+                </div>
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves = "esave"> Evasion Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.esave" type="text"> vs {{data.attributes.saves.esave}} </span>
+                        </div>
+                    </li>
+                </div>
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves="msave"> Mental Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.msave" type="text"> vs {{data.attributes.saves.msave}} </span>
+                        </div>
+                    </li>
+                </div>
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves = "morale"> Morale Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.morale" type="text"> vs &nbsp; </span>
+                            <input name="data.attributes.saves.morale" type="text" class = "effort-box"
+                                   value="{{data.attributes.saves.morale}}" data-dtype="Number" placeholder= "6?"/>
+                        </div>
+                    </li>
+                </div>
+
+
+                    <!--                    System Strain from Lofty-->
+                    <div>
+                        <li class="attribute resource">
+                            <h4 class="attribute-name box-title"> System Strain </h4>
+                            <div class="attribute-value">
+                                <input name="data.attributes.strain.value" type="text" class = "effort-box"
+                                       value="{{data.attributes.strain.value}}" data-dtype="Number" placeholder= "0"/>
+                                <span class="sep"> /&nbsp; </span>
+                                <span> {{data.abilities.con.value}} </span>
+                            </div>
+                        </li>
+                    </div>
+                    <div>
+                        <li class="attribute resource">
+                            <h4 class="attribute-name box-title"> {{localize "WWNPRETTY.Effort"}} </h4>
+                            <div class="attribute-value">
+                                <input name="data.attributes.effort.value" type="text" class = "effort-box"
+                                       value="{{data.attributes.effort.value}}" data-dtype="Number" placeholder= "0"/>
+                                <span class="sep">/</span>
+                                <input name="data.attributes.effort.max" type="text" class = "effort-box"
+                                       value="{{data.attributes.effort.max}}" data-dtype="Number" placeholder= "0"/>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+<!--                <label> More Info </label>-->
+                <textarea name="data.details.other" placeholder="Notes" class="npc-text-area">{{data.details.other}}</textarea>
+            </section>
         </div>
-      </div>
-    </div>
-    <div class="flex flex-col gap-1">
-      <h3 class="text-lg">{{localize 'swnr.sheet.rollables'}}</h3>
-      <div>
-        <a class="morale">
-          <i class="fa fa-dice-d6"></i>
-          {{localize 'swnr.npc.morale-check'}} {{localize 'swnr.sheet.vs'}}
-        </a>
-        <input
-          class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-6"
-          type="number"
-          name="data.moralScore"
-          min="0"
-          max="12"
-          step="1"
-          value="{{data.moralScore}}"
-        />
-      </div>
-      <div>
-        <a class="skill" data-skill-type="untrained">
-          <i class="fa fa-dice-d6"></i>
-          {{localize 'swnr.sheet.skill'}}: 0
-        </a>
-      </div>
-      <div>
-        <a class="skill" data-skill-type="trained">
-          <i class="fa fa-dice-d6"></i>
-          {{localize 'swnr.npc.trained-skill'}}:
-        </a>
-        <input
-          class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-6"
-          type="number"
-          name="data.skillBonus"
-          min="0"
-          max="9"
-          step="1"
-          value="{{data.skillBonus}}"
-        />
-      </div>
-      <div class="saving-throw">
-        <a>
-          <i class="fa fa-dice-d6"></i>
-          {{localize "swnr.chat.savingThrow"}}:
-        </a>
-        <input
-          class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-6"
-          type="number"
-          name="data.saves"
-          min="1"
-          max="19"
-          step="1"
-          value="{{data.saves}}"
-        />
-      </div>
-    </div>
-    <div class="md:col-span-2 lg:col-span-1 flex flex-col gap-1">
-      <h3 class="text-lg">{{localize 'swnr.effort.title'}}</h3>
-      <div class="gap-1 flex flex-col flex-grow w-full">
-        <div class="flex lg:flex-col gap-1">
-          <div class="flex-grow">
-            {{localize 'swnr.effort.max'}}:
-            <input
-              class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-8"
-              type="number"
-              name="data.effort.max"
-              min="0"
-              step="1"
-              value="{{data.effort.max}}"
-            />
-          </div>
-          <div class="flex-grow">
-            {{localize 'swnr.effort.current'}}:
-            <input
-              class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-8"
-              type="number"
-              name="data.effort.current"
-              min="0"
-              step="1"
-              max="{{concat data.effort.current data.effort.value}}"
-              value="{{data.effort.current}}"
-            />
-          </div>
-          <div class="flex-grow">
-            {{localize 'swnr.effort.scene'}}:
-            <input
-              class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-8"
-              type="number"
-              name="data.effort.scene"
-              min="0"
-              step="1"
-              max="{{concat data.effort.scene data.effort.value}}"
-              value="{{data.effort.scene}}"
-            />
-          </div>
-          <div class="flex-grow">
-            {{localize 'swnr.effort.day'}}:
-            <input
-              class="border border-gray-800 px-1 text-center bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md w-8"
-              type="number"
-              name="data.effort.day"
-              min="0"
-              step="1"
-              max="{{concat data.effort.day data.effort.value}}"
-              value="{{data.effort.day}}"
-            />
-          </div>
+
+        {{!-- Features Tab --}}
+        <div class="tab features flexcol" data-group="primary" data-tab="features">
+            {{> "systems/wwnpretty/templates/actors/parts/actor-features.html" sections=features}}
         </div>
-        <div class="flex gap-2 items-center">
-          <div>{{data.effort.value}}/{{data.effort.max}}</div>
-          <div
-            class="bg-purple-300 border border-purple-900 w-full rounded-full h-full overflow-hidden"
-          >
-            <div
-              class="bg-purple-500 h-full rounded-full"
-              style="width: min(calc(100% * {{data.effort.value}}/{{data.effort.max}}));"
-            ></div>
-          </div>
+
+        {{!-- Psionics Tab --}}
+        <div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
+            {{> "systems/wwnpretty/templates/actors/parts/actor-spellbook.html"}}
         </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="bg-coolGray-300 border border-coolGray-600 rounded-md p-1 flex flex-wrap justify-between"
-  >
-    <div class="flex flex-col gap-1" style="flex-grow: 1">
-      <h3 class="text-lg">{{localize 'swnr.npc.combat'}}</h3>
-      <div>
-        {{localize 'swnr.npc.attacks-per-turn'}}:
-        <input
-          class="w-8 border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="number"
-          name="data.attacks.number"
-          min="0"
-          step="1"
-          value="{{data.attacks.number}}"
-        />
-      </div>
-      <div>
-        {{localize 'swnr.npc.attack-bonus-hit'}}:
-        <input
-          class="w-8 border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="number"
-          name="data.ab"
-          min="0"
-          step="1"
-          value="{{data.ab}}"
-        />
-      </div>
-      <div>
-        {{localize 'swnr.npc.attack-bonus-damage'}}:
-        <input
-          class="w-8 border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="number"
-          name="data.attacks.bonusDamage"
-          min="0"
-          step="1"
-          value="{{data.attacks.bonusDamage}}"
-        />
-      </div>
-      <ul class="flex flex-col gap-1">
-        {{#each itemTypes.weapon as |i|}} {{>
-        "systems/swnr/templates/actors/fragments/weapon.html" item=i actor=actor damageBonus=actor.data.data.attacks.bonusDamage
-        type=actor.data.type}} {{/each}}
-      </ul>
-    </div>
-    <div class="flex flex-col flex-grow gap-1">
-      <h3 class="text-lg">{{localize 'swnr.npc.abilities'}}</h3>
-      <ul class="flex flex-col gap-0.5">
-        {{#each abilities}} {{> (concat
-        "systems/swnr/templates/actors/fragments/" (concat this.type '.html'))
-        item=this type=actor.data.type }} {{/each}}
-      </ul>
-    </div>
-    <div class="flex flex-col flex-grow gap-1">
-      <h3 class="text-lg">{{localize 'swnr.npc.equipment'}}</h3>
-      <ul class="flex flex-col gap-0.5">
-        {{#each equipment}} {{>
-        "systems/swnr/templates/actors/fragments/item.html" item=this
-        type=actor.data.type }} {{/each}}
-      </ul>
-    </div>
-  </div>
-  <div class="flex flex-row flex-wrap gap-2">
-    <div class="flex-grow w-56 space-y-2">
-      <input
-        class="border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-        type="text"
-        name="data.notes.left.label"
-        value="{{data.notes.left.label}}"
-      />
-      <!-- prettier-ignore  -->
-      <textarea
-        name="data.notes.left.contents"
-        class="border px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-        id=""
-        cols="30"
-        rows="10"
-        placeholder="{{data.notes.left.label}}"
-      >{{data.notes.left.contents}}</textarea>
-    </div>
-    <div class="flex-grow w-56 space-y-2">
-      <input
-        class="border text-center px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-        type="text"
-        name="data.notes.right.label"
-        value="{{data.notes.right.label}}"
-      />
-      <!-- prettier-ignore  -->
-      <textarea
-        name="data.notes.right.contents"
-        class="border px-1 border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-        id=""
-        cols="30"
-        rows="10"
-        placeholder="{{data.notes.right.label}}"
-      >{{data.notes.right.contents}}</textarea>
-    </div>
-  </div>
+
+        {{!-- Senses/Effects Tab --}}
+        <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+
+            <div class = "flexrow">
+                <div class = "flexcol extras-info info">
+                    <textarea name="data.details.extrasone.value" placeholder="Notes+" class="npc-text-area">{{data.details.extrasone.value}}</textarea>
+                </div>
+                <div class = "flexcol extras-info info">
+                    <textarea name="data.details.extrastwo.value" placeholder="Notes++" class="npc-text-area">{{data.details.extrastwo.value}}</textarea>
+                </div>
+            </div>
+            <div class = "extras-list">
+                {{> "systems/wwnpretty/templates/actors/parts/actor-traits.html"}}
+            </div>
+        </div>
+
+        {{!-- Biography Tab --}}
+        <div class="tab flexrow" data-group="primary" data-tab="biography">
+            <div class="characteristics flexcol">
+                <label>{{ localize "WWNPRETTY.Appearance" }}</label>
+                <textarea name="data.details.appearance">{{data.details.appearance}}</textarea>
+                <label>{{ localize "WWNPRETTY.Ideals" }}</label>
+                <textarea name="data.details.ideal">{{data.details.ideal}}</textarea>
+                <label>{{ localize "WWNPRETTY.PersonalityTraits" }}</label>
+                <textarea name="data.details.trait">{{data.details.trait}}</textarea>
+                <label>{{ localize "WWNPRETTY.Bonds" }}</label>
+                <textarea name="data.details.bond">{{data.details.bond}}</textarea>
+            </div>
+            <div class="biography">
+                {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
+            </div>
+            <!--        <div class="tab biography flexcol" data-group="primary" data-tab="biography">-->
+            <!--            {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}-->
+            <!--        </div>-->
+        </div>
+
+    </section>
 </form>

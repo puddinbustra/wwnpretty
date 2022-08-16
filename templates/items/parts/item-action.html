@@ -1,0 +1,133 @@
+{{!-- Action Type --}}
+<div class="form-group select">
+    <label>{{ localize "WWNPRETTY.ItemActionType" }}</label>
+    <select name="data.actionType">
+        {{#select data.actionType}}
+        <option value=""></option>
+        {{#each config.itemActionTypes as |name type|}}
+        <option value="{{type}}">{{name}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+</div>
+{{#if data.actionType}}
+
+{{!-- Ability Modifier --}}
+<div class="form-group select">
+    <label>{{ localize "WWNPRETTY.AbilityModifier" }}</label>
+    <select name="data.ability">
+        {{#select data.ability}}
+        <option value="none">{{ localize "WWNPRETTY.Default" }}</option>
+        {{#each config.abilities as |ability a|}}
+        <option value="{{a}}">{{ability}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+</div>
+
+{{!-- Attack Skill by Lofty --}}
+<div class="form-group select">
+    <label> Skill Type </label>
+    <select name="data.attackSkills">
+        {{#select data.attackSkills}}
+        <option value="">{{ localize "WWNPRETTY.Default" }}</option>
+        {{#each config.attackSkills as |ability a|}}
+        <option value="{{a}}">{{ability}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+</div>
+
+{{!-- Attack Roll Bonus --}}
+{{#if hasAttackRoll }}
+<div class="form-group">
+    <label>{{ localize "WWNPRETTY.ItemAttackBonus" }}</label>
+    <div class="form-fields">
+        <input type="text" name="data.attackBonus" value="{{data.attackBonus}}"/>
+    </div>
+</div>
+{{/if}}
+
+{{!-- Damage Formula --}}
+<h4 class="damage-header">
+    {{#unless isHealing }}{{ localize "WWNPRETTY.Damage" }}{{ else }}{{ localize "WWNPRETTY.Healing" }}{{/unless}} {{ localize "WWNPRETTY.Formula" }}
+    <a class="damage-control add-damage"><i class="fas fa-plus"></i></a>
+</h4>
+<ol class="damage-parts form-group">
+    {{#each data.damage.parts as |part i| }}
+    <li class="damage-part flexrow" data-damage-part="{{i}}">
+        <input type="text" name="data.damage.parts.{{i}}.0" value="{{lookup this "0"}}"/>
+        <select name="data.damage.parts.{{i}}.1">
+            {{#select (lookup this "1") }}
+            <option value="">{{ localize "WWNPRETTY.None" }}</option>
+            {{#each ../config.damageTypes as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{#each ../config.healingTypes as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <a class="damage-control delete-damage"><i class="fas fa-minus"></i></a>
+    </li>
+    {{/each}}
+</ol>
+
+<!--{{!&#45;&#45; Versatile Damage &#45;&#45;}}-->
+<!--{{#if data.damage.parts.length }}-->
+<!--<div class="form-group">-->
+<!--    <label>{{ localize "WWNPRETTY.VersatileDamage" }}</label>-->
+<!--    <div class="form-fields">-->
+<!--        <input type="text" name="data.damage.versatile" value="{{data.damage.versatile}}" placeholder="{{ localize 'WWNPRETTY.Formula' }}"/>-->
+<!--    </div>-->
+<!--</div>-->
+<!--{{/if}}-->
+
+<!--{{!&#45;&#45; Other Formula &#45;&#45;}}-->
+<!--<div class="form-group">-->
+<!--    <label>{{ localize "WWNPRETTY.OtherFormula" }}</label>-->
+<!--    <div class="form-fields">-->
+<!--        <input type="text" name="data.formula" value="{{data.formula}}" placeholder="{{ localize 'WWNPRETTY.Formula' }}"/>-->
+<!--    </div>-->
+<!--</div>-->
+
+{{!-- Shock Damage Formula --}}
+<div class="form-group">
+    <label> Shock Damage (not automated) + dc </label>
+    <div class="form-fields">
+        <input type="text" name="data.shockDam" value="{{data.shockDam}}" placeholder="{{ localize 'WWNPRETTY.ShockDamage' }}"/>
+    </div>
+</div>
+
+<!--{{!&#45;&#45; Saving Throw &#45;&#45;}}-->
+<!--<div class="form-group input-select">-->
+<!--    <label>{{ localize "WWNPRETTY.ActionSave" }}</label>-->
+<!--    <div class="form-fields">-->
+<!--        <select name="data.save.ability">-->
+<!--            {{#select data.save.ability}}-->
+<!--            <option value=""></option>-->
+<!--            {{#each config.abilities as |ability a|}}-->
+<!--            <option value="{{a}}">{{ability}}</option>-->
+<!--            {{/each}}-->
+<!--            {{/select}}-->
+<!--        </select>-->
+<!--        <span>{{ localize "WWNPRETTY.VsDC" }}</span>-->
+<!--        <input type="text" name="data.save.dc" value="{{#if data.save.dc}}{{data.save.dc}}{{/if}}" data-dtype="Number" placeholder="{{ localize 'WWNPRETTY.AbbreviationDC' }}" {{#unless isFlatDC}}disabled{{/unless}}/>-->
+<!--        <select name="data.save.scaling">-->
+<!--            {{#select data.save.scaling}}-->
+<!--            <option value="spell">{{ localize "WWNPRETTY.Spellcasting" }}</option>-->
+<!--            {{#each config.abilities as |ability a|}}-->
+<!--            <option value="{{a}}">{{ability}}</option>-->
+<!--            {{/each}}-->
+<!--            <option value="flat">{{ localize "WWNPRETTY.Flat" }}</option>-->
+<!--            {{/select}}-->
+<!--        </select>-->
+<!--    </div>-->
+<!--</div>-->
+
+{{!-- Chat Message Flavor --}}
+<div class="form-group stacked">
+    <label>{{ localize "WWNPRETTY.ChatFlavor" }}</label>
+    <input type="text" name="data.chatFlavor" value="{{data.chatFlavor}}"/>
+</div>
+{{/if}}

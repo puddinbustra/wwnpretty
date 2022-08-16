@@ -1,0 +1,36 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <section class="form-body">
+<!--	    <p class="notes">{{localize 'WWNPRETTY.FlagsInstructions'}}</p>-->
+
+
+        <h3 class="form-header">{{localize "WWNPRETTY.Bonuses"}}</h3>
+        <p class="notes">{{localize "WWNPRETTY.BonusesHint"}}</p>
+        {{#each bonuses as |b|}}
+        <div class="form-group">
+            <label>{{localize b.label}}</label>
+            <input type="text" name="{{b.name}}" value="{{b.value}}"/>
+        </div>
+        {{/each}}
+
+        <h3 class="form-header">{{localize "WWNPRETTY.DiceNumTitle"}}</h3>
+        <p class="notes">{{localize "WWNPRETTY.DiceNumHint"}}</p>
+        {{#each skills as |s|}}
+            <li class="skill flexrow" data-skill="{{s}}">
+                <div class="form-group">
+                    <label>{{localize s.label}}</label>
+<!--                    <label> {{s.label}} </label>-->
+<!--                    <h4 class="skill-name rollable">{{skill.label}}</h4>-->
+<!--                    <input type="text" name="data.skills.{{s}}.diceNum" value="{{s.diceNum}}" data-dtype="Number"/>-->
+                    <input type="text" name="{{s.name}}" value="{{s.value}}"/>
+                </div>
+            </li>
+        {{/each}}
+
+    </section>
+
+    <footer class="form-footer">
+        <button type="submit" name="submit">
+            <i class="far fa-save"></i> {{localize 'WWNPRETTY.FlagsSave'}}
+        </button>
+    </footer>
+</form>

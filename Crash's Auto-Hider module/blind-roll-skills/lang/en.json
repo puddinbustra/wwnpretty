@@ -1,0 +1,40 @@
+{
+  "BLINDROLLSKILLS.SettingHideAdminister": "Hide Administer",
+  "BLINDROLLSKILLS.SettingHideConnect": "Hide Connect",
+  "BLINDROLLSKILLS.SettingHideExert": "Hide Exert",
+  "BLINDROLLSKILLS.SettingHideFix": "Hide Fix",
+  "BLINDROLLSKILLS.SettingHideHeal": "Hide Heal",
+  "BLINDROLLSKILLS.SettingHideLead": "Hide Lead",
+  "BLINDROLLSKILLS.SettingHideKnow": "Hide Know",
+  "BLINDROLLSKILLS.SettingHidePerformance": "Hide Perform",
+  "BLINDROLLSKILLS.SettingHideNotice": "Hide Notice",
+  "BLINDROLLSKILLS.SettingHidePilot": "Hide Pilot",
+  "BLINDROLLSKILLS.SettingHideProgram": "Hide Program",
+  "BLINDROLLSKILLS.SettingHideShoot": "Hide Shoot",
+  "BLINDROLLSKILLS.SettingHideSneak": "Hide Sneak",
+  "BLINDROLLSKILLS.SettingHidePunch": "Hide Punch",
+  "BLINDROLLSKILLS.SettingHideStab": "Hide Stab",
+  "BLINDROLLSKILLS.SettingHideSurvive": "Hide Survive",
+  "BLINDROLLSKILLS.SettingHideTalk": "Hide Talk",
+  "BLINDROLLSKILLS.SettingHideTrade": "Hide Trade",
+  "BLINDROLLSKILLS.SettingHideWork": "Hide Work",
+
+
+
+  "BLINDROLLSKILLS.SettingHideDeathSavesHint": "This only hides the roll in the chat. Users will still see the number of successes and failures on the character sheet.",
+
+  "BLINDROLLSKILLS.SettingHideSaves": "Hide Saving Throws",
+  "BLINDROLLSKILLS.SettingHideSavesHint": "This will hide all non death saves.",
+
+  "BLINDROLLSKILLS.SettingHideAttackRolls": "Hide Attack Rolls",
+
+  "BLINDROLLSKILLS.SettingHideInitiative": "Hide Initiative Rolls",
+
+  "BLINDROLLSKILLS.SettingShowHelpCards": "Show Help Cards",
+  "BLINDROLLSKILLS.SettingShowHelpCardsHint": "Toggle this on to display chat messages when your rolls are made blindly because of this module.",
+
+  "BLINDROLLSKILLS.ChatCardHelpText": "Your roll is hidden from you because your GM has chosen this type of roll to be made blind by default.",
+  "BLINDROLLSKILLS.ChatCardDisableText": "Don't show me this again",
+  "BLINDROLLSKILLS.ChatCardSpeaker": "Automatic Blind Roll",
+  "BLINDROLLSKILLS.HelpCardsDisabled": "Help cards disabled!"
+}

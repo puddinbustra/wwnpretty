@@ -1,532 +1,335 @@
-<form class="{{cssClass}} -m-2 p-2 bg-gray-200">
-  <div class="">
-    <div class="flex gap-2">
-      <img
-        class="profile-img w-24 h-24 object-contain"
-        src="{{actor.img}}"
-        title="{{actor.name}}"
-        data-edit="img"
-      />
-      <div class="flex-grow grid grid-cols-3 items-center gap-1">
-        <input
-          name="name"
-          class="text-2xl col-span-3 px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          type="text"
-          value="{{actor.name}}"
-          placeholder="{{localize 'swnr.sheet.name'}}"
-        />
-        <input
-          class="px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          name="data.class"
-          value="{{actor.data.class}}"
-          placeholder="{{localize 'swnr.sheet.class'}}"
-          type="text"
-        />
-        <input
-          class="px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-          name="data.species"
-          type="text"
-          value="{{actor.data.species}}"
-          placeholder="{{localize 'swnr.sheet.species'}}"
-        />
-        <div class="pr-0.5 text-lg">
-          <div
-            class="gap-1 pl-1 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md flex items-center"
-          >
-            <label>{{localize 'swnr.sheet.level'}}</label>
-            <input
-              type="number"
-              class="bg-transparent flex-shrink w-full"
-              min="1"
-              step="1"
-              name="data.level.value"
-              value="{{actor.data.level.value}}"
-              data-dtype="Number"
-            />
-          </div>
-        </div>
-        <div
-          class="saves col-span-3 flex-shrink-0 flex flex-row justify-between py-1 flex-wrap gap-2"
-        >
-          <div
-            data-save-type="physical"
-            class="save sheet-button gap-2"
-          >
-            v{{actor.data.save.physical}} {{localize
-            'swnr.sheet.saves.physical'}}
-            <i class="fas fa-dice-d20"></i>
-          </div>
-          <div
-            data-save-type="evasion"
-            class="save sheet-button gap-2"
-          >
-            v{{actor.data.save.evasion}} {{localize 'swnr.sheet.saves.evasion'}}
-            <i class="fas fa-dice-d20"></i>
-          </div>
-          <div
-            data-save-type="mental"
-            class="save sheet-button gap-2"
-          >
-            v{{actor.data.save.mental}} {{localize 'swnr.sheet.saves.mental'}}
-            <i class="fas fa-dice-d20"></i>
-          </div>
-          {{#if useHomebrewLuckSave}}
-          <div
-            data-save-type="luck"
-            class="save sheet-button gap-2"
-          >
-            v{{actor.data.save.luck}} {{localize 'swnr.sheet.saves.luck'}}
-            <i class="fas fa-dice-d20"></i>
-          </div>
-          {{/if}}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex gap-2">
-    <div class="flex flex-col flex-shrink flex-wrap gap-1">
-      <div class="stats -text-xs">
-        <table>
-          <thead>
-            <tr>
-              <th class="statRoll px-1 hover:text-shadow hover:text-shadow-blueGray-900 cursor-pointer transition-text-shadow">
-                {{localize 'swnr.sheet.stats'}} <i class="fas fa-dice-d20"></i>
-              </th>
-              <th class="px-1 hidden lg:table-cell">
-                {{localize 'swnr.sheet.base'}}
-              </th>
-              <th class="px-1 hidden lg:table-cell">
-                {{localize 'swnr.sheet.boosts'}}
-              </th>
-              <th class="px-1 hidden lg:table-cell">
-                {{localize 'swnr.sheet.bonus'}}
-              </th>
-              <th class="px-1">{{localize 'swnr.sheet.modifier'}}</th>
-            </tr>
-          </thead>
-          {{#each actor.data.stats as |stat key|}}
-          <tr>
-            <td>
-              <label for="data.stats.{{key}}.base" class="resource-label px-1">
-                {{localize (concat 'swnr.stat.long.' key)}}
-              </label>
-            </td>
-            <td class="text-center hidden lg:table-cell">
-              <input
-                type="number"
-                class="w-8 px-1.5 py-3 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-                min="3"
-                max="18"
-                step="1"
-                name="data.stats.{{key}}.base"
-                value="{{stat.base}}"
-                data-dtype="Number"
-              />
-            </td>
-            <td class="text-center hidden lg:table-cell">
-              <input
-                type="number"
-                class="w-8 px-1.5 py-3 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-                min="0"
-                max="5"
-                step="1"
-                name="data.stats.{{key}}.boost"
-                value="{{stat.boost}}"
-                data-dtype="Number"
-              />
-            </td>
-            <td class="text-center hidden lg:table-cell">
-              <input
-                type="number"
-                class="w-8 px-1.5 py-3 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-                min="0"
-                max="3"
-                step="1"
-                name="data.stats.{{key}}.bonus"
-                value="{{stat.bonus}}"
-                data-dtype="Number"
-              />
-            </td>
-            <td class="text-center">
-              <span class="stat-mod">
-                {{numberFormat stat.mod decimals=0 sign=true}}
-              </span>
-            </td>
-          </tr>
-          {{/each}}
-        </table>
-      </div>
-      <div class="core-stats grid grid-cols-1 lg:grid-cols-3 gap-1 text-center">
-        <div class="hp flex flex-col justify-center items-center">
-          <div class="border border-gray-800 bg-gray-400 mx-auto rounded-md">
-            <input
-              class="w-8 text-right pl-1.5 py-3.5 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              step="1"
-              name="data.health.value"
-              value="{{data.health.value}}"
-              data-dtype="Number"
-              min="0"
-            /><span>/</span
-            ><input
-              class="w-8 text-left pr-1.5 py-3.5 bg-opacity-75 bg-gray-400 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              name="data.health.max"
-              value="{{data.health.max}}"
-              step="1"
-              min="1"
-              data-dtype="Number"
-            />
-          </div>
-          <label class="hp-label hover:text-shadow hover:text-shadow-blueGray-600 cursor-pointer transition-text-shadow"
-            >{{localize 'swnr.sheet.hp'}} <i class="fas fa-dice-d20"></i
-          ></label>
-        </div>
+<form class="{{cssClass}} flexcol" autocomplete="off">
 
-        <div class="system flex flex-col items-center justify-center">
-          <div class="border border-gray-800 bg-gray-400 mx-auto rounded-md">
-            <input
-              class="w-8 text-right pl-1.5 py-3.5 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              name="data.systemStrain.value"
-              value="{{data.systemStrain.value}}"
-              data-dtype="Number"
-            />/<span
-              class="inline-block text-left text-gray-700 cursor-not-allowed w-8"
-              >{{data.systemStrain.max}}</span
-            >
-          </div>
+    {{!-- Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        <section class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'WWNPRETTY.Name' }}"/>
+            </h1>
+<!--            <a class = "feedback" href = "https://github.com/puddinbustra/wwnpretty">Sheet Feedback?</a>-->
+            <aside class="header-exp flexcol">
+                <a class = "feedback" href = "https://github.com/puddinbustra/wwnpretty">Sheet Feedback?</a>
+                <div class="charlevel" title="{{multiclassLabels}}">
+                    <label>{{ localize "WWNPRETTY.Level" }} {{data.details.level}} {{classLabels}}</label>
 
-          <label>{{localize 'swnr.sheet.system-strain'}}</label>
-        </div>
-        <div class="perm-sys flex flex-col items-center">
-          <input
-            class="w-10 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-            type="number"
-            min="0"
-            name="data.systemStrain.permanent"
-            value="{{data.systemStrain.permanent}}"
-          />
-          <label>{{localize 'swnr.sheet.permanent-strain'}}</label>
-        </div>
-        <div class="exp flex flex-col justify-center items-center">
-          <div class="border border-gray-800 bg-gray-400 mx-auto rounded-md">
-            <input
-              class="w-8 text-right pl-1.5 py-3.5 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              step="1"
-              name="data.level.exp"
-              min="0"
-              data-dtype="Number"
-              value="{{data.level.exp}}"
-            /><span>/</span
-            ><input
-              class="w-8 text-left pr-1.5 py-3.5 bg-opacity-75 bg-gray-400 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              step="1"
-              name="data.level.expToLevel"
-              min="0"
-              data-dtype="Number"
-              value="{{data.level.expToLevel}}"
-            />
-          </div>
+                    <!--<label> {{ localize "WWNPRETTY.Level" }} </label>
+                    <input class = "levelInput" name = "data.attributes.level.value" type = "number" value = "{{data.attributes.level.value}}" placeholder="0" data-dtype="Number"/>
+                    <span class="levels">{{classLabels}}</span>-->
+                </div>
 
-          <label>{{localize 'swnr.sheet.xp'}}</label>
-        </div>
-        <div class="ac flex flex-col justify-around items-center">
-          <div>{{data.ac}}</div>
-          <label>{{localize 'swnr.sheet.armor-class'}}</label>
-        </div>
-        <div class="ab flex flex-col justify-around items-center">
-          <input
-            class="w-10 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-            type="number"
-            step="1"
-            name="data.ab"
-            min="-9"
-            max="99"
-            data-dtype="Number"
-            value="{{data.ab}}"
-          />
-          <label>{{localize 'swnr.sheet.attack-bonus'}}</label>
-        </div>
-        <div class="flex flex-col items-center">
-          <input
-            class="w-20 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-            type="number"
-            step="1"
-            name="data.credits.debt"
-            data-dtype="Number"
-            value="{{data.credits.debt}}"
-          />
-          <label for="data.credits.debt">{{localize 'swnr.credits.debts'}}</label>
-        </div>
-        <div class="flex flex-col items-center">
-          <input
-            class="w-20 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-            type="number"
-            step="1"
-            name="data.credits.balance"
-            data-dtype="Number"
-            value="{{data.credits.balance}}"
-          />
-          <label for="data.credits.balance">{{localize "swnr.credits.balance"}}</label>
-        </div>
-        <div class="flex flex-col items-center">
-          <input
-            class="w-20 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-            type="number"
-            step="1"
-            name="data.credits.owed"
-            data-dtype="Number"
-            value="{{data.credits.owed}}"
-          />
-          <label for="data.credits.owed">{{localize "swnr.credits.owed"}}</label>
-        </div>
-        <div></div>
-      </div>
-      <div class="flex-col flex gap-1">
-        <h3>{{localize 'swnr.effort.title'}}</h3>
-        <div class="flex flex-col lg:flex-row gap-1">
-          <div>
-            <label for="data.effort.bonus">
-              {{localize 'swnr.effort.bonus'}}:
-            </label>
-            <input
-              class="w-10 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              step="1"
-              name="data.effort.bonus"
-              value="{{data.effort.bonus}}"
-              data-dtype="Number"
-            />
-          </div>
-          <div>
-            <label for="data.effort.current">
-              {{localize 'swnr.effort.current'}}:
-            </label>
-            <input
-              class="w-10 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              min="0"
-              step="1"
-              max="{{concat data.effort.current data.effort.value}}"
-              name="data.effort.current"
-              value="{{data.effort.current}}"
-              data-dtype="Number"
-            />
-          </div>
-          <div>
-            <label for="data.effort.scene">
-              {{localize 'swnr.effort.scene'}}:
-            </label>
-            <input
-              class="w-10 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              min="0"
-              step="1"
-              max="{{concat data.effort.scene data.effort.value}}"
-              name="data.effort.scene"
-              value="{{data.effort.scene}}"
-              data-dtype="Number"
-            />
-          </div>
-          <div>
-            <label for="data.effort.day"
-              >{{localize 'swnr.effort.day'}}:
-            </label>
-            <input
-              class="w-10 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              type="number"
-              min="0"
-              step="1"
-              max="{{concat data.effort.day data.effort.value}}"
-              name="data.effort.day"
-              value="{{data.effort.day}}"
-              data-dtype="Number"
-            />
-          </div>
-        </div>
-        <div class="flex gap-2 items-center">
-          <div>{{data.effort.value}}/{{data.effort.max}}</div>
-          <div
-            class="bg-purple-300 border border-purple-900 w-full rounded-full h-4 overflow-hidden"
-          >
-            <div
-              class="bg-purple-500 h-full rounded-full"
-              style="width: min(calc(100% * {{data.effort.value}}/{{data.effort.max}}));"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-full">
-      <nav
-        class="pc-sheet-tabs tabs py-1 flex flex-wrap gap-2 border-t border-b border-trueGray-500 border1 mb-1"
-        data-group="primary"
-      >
-        <a class="item" data-tab="biography">
-          {{localize 'swnr.sheet.tabs.biography'}}
-        </a>
-        <a class="item" data-tab="combat">
-          {{localize 'swnr.sheet.tabs.combat'}}
-        </a>
-        <a class="item" data-tab="inventory">
-          {{localize 'swnr.sheet.tabs.inventory'}}
-        </a>
-        <a class="item" data-tab="skills">
-          {{localize 'swnr.sheet.tabs.skills'}}
-        </a>
-        <a class="item" data-tab="foci">{{localize 'swnr.sheet.tabs.foci'}}</a>
-      </nav>
-      <section class="sheet-body">
-        <div
-          class="tab biography min-h-full"
-          data-group="primary"
-          data-tab="biography"
-        >
-          <div class="flex gap-1">
-            <input
-              class="px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              name="data.homeworld"
-              value="{{actor.data.homeworld}}"
-              placeholder="{{localize 'swnr.sheet.homeworld'}}"
-              type="text"
-            />
-            <input
-              class="px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              name="data.background"
-              value="{{actor.data.background}}"
-              placeholder="{{localize 'swnr.sheet.background'}}"
-              type="text"
-            />
-            <input
-              class="px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-              name="data.employer"
-              value="{{actor.data.employer}}"
-              placeholder="{{localize 'swnr.sheet.employer'}}"
-              type="text"
-            />
-          </div>
-          <div class="bg-gray-300 border border-gray-700 rounded-md p-2 mt-4">
-            {{editor content=data.biography target="data.biography" button=true
-            owner=owner editable=editable}}
-          </div>
-        </div>
-        <div class="tab combat" data-group="primary" data-tab="combat">
-          <div class="flex gap-1">
-            <div class="flex-grow">
-              <h4 class="text-lg underline text-center">
-                {{localize 'swnr.sheet.tabs.weapons'}}
-              </h4>
-              <div class="space-y-2">
-                {{#each itemTypes.weapon as |item id|}} {{>
-                "systems/swnr/templates/actors/fragments/weapon.html" item=item
-                damageBonus=(concat actor.data.data.ab (getPCStatModForWeapon
-                actor item true)) type=actor.data.type actor=actor }} {{/each}}
-              </div>
-            </div>
-            <div class="flex-grow">
-              <h4 class="text-lg underline text-center">
-                {{localize 'swnr.sheet.tabs.armor'}}
-              </h4>
-              <div class="flex gap-1 flex-col">
-                <li class="item armor text-center flex items-center gap-1">
-                  <h4>{{localize 'swnr.armor.innateArmorClass'}}</h4>
-                  <input
-                    type="number"
-                    class="w-8 text-center px-1.5 py-3.5 border border-gray-800 bg-gray-400 bg-opacity-75 placeholder-blue-800 placeholder-opacity-75 rounded-md"
-                    min="1"
-                    step="1"
-                    name="data.baseAc"
-                    value="{{actor.data.baseAc}}"
-                    data-dtype="Number"
-                  />
+                {{#unless disableExperience}}
+                <div class="experience flexrow">
+                    <input name="data.details.xp.value" type="text" value="{{data.details.xp.value}}" placeholder="0" data-dtype="Number"/>
+<!--                    <span class="sep">/</span>-->
+<!--                    <span class="max">{{data.details.xp.max}}</span>-->
+                </div>
+                <div class="xpbar">
+                    <span class="bar" style="width: {{data.details.xp.pct}}%"></span>
+                </div>
+                {{/unless}}
+            </aside>
+
+            {{!-- Header Attributes --}}
+
+            {{!-- Character Summary --}}
+            <ul class="summary flexrow">
+                <!--                Use this as a template to add things to the upper header line if needed-->
+                <!--                <li>-->
+                <!--                    <input type="text" name="data.details.race" value="{{data.details.race}}" placeholder="{{ localize 'WWNPRETTY.Race' }}"/>-->
+                <!--                </li>-->
+                <li>
+                    <input type="text" name="data.details.focus" value="{{data.details.focus}}" placeholder="{{ localize 'WWNPRETTY.Homeworld' }}"/>
                 </li>
-                {{#each itemTypes.armor as |item id|}} {{>
-                "systems/swnr/templates/actors/fragments/armor.html" item=item
-                type=actor.data.type}} {{/each}}
-              </div>
-            </div>
-            <div class="flex-grow">
-              <h4 class="text-lg underline text-center">
-                {{localize 'swnr.sheet.tabs.powers'}}
-              </h4>
-              <div class="flex gap-1 flex-col">
-                {{#each itemTypes.power as |item id|}} {{>
-                "systems/swnr/templates/actors/fragments/power.html" item=item
-                type=actor.data.type}} {{/each}}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab inventory" data-group="primary" data-tab="inventory">
-          <div class="grid grid-cols-2 gap-1 p-1">
-            <div class="text-center text-base">
-              {{localize 'swnr.item.locationReadied'}}:
-              {{data.encumbrance.ready.value}}/{{data.encumbrance.ready.max}}
-            </div>
-            <div
-              class="w-full border border-green-600 bg-green-200 rounded-full row-start-2"
-            >
-              <div
-                class="h-2 bg-green-400 rounded-full"
-                style="width: min(100%, calc(100% * {{data.encumbrance.ready.value}}/{{data.encumbrance.ready.max}}));"
-              ></div>
-            </div>
-            <div class="text-center text-base">
-              {{localize 'swnr.item.locationStowed'}}:
-              {{data.encumbrance.stowed.value}}/{{data.encumbrance.stowed.max}}
-            </div>
-            <div
-              class="w-full border border-yellow-600 bg-yellow-200 rounded-full"
-            >
-              <div
-                class="h-2 bg-yellow-400 rounded-full"
-                style="width: min(100%, calc(100% * {{data.encumbrance.stowed.value}}/{{data.encumbrance.stowed.max}}));"
-              ></div>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            {{#each itemTypes.weapon as |item id|}}
-            <div class="w-36 flex-grow">
-            {{> "systems/swnr/templates/actors/fragments/item.html" type="character" item=item id=id}}
-            </div>
+                <!--                <li>-->
+                <!--                    <input class="saves" name="data.abilities.{'str'}.value" type="number" value="{str.value}"/>-->
+                <!--                </li>-->
+                <li>
+                    <input type="text" name="data.details.background" value="{{data.details.background}}" placeholder="{{ localize 'WWNPRETTY.Background' }}"/>
+                </li>
+                <li class="currencylist">
+<!--                    <label> {{localize "WWNPRETTY.CurrencyCredits"}}</label>-->
+<!--                    <label>-->
+                        <input class = "currency" type="text" name="data.currency.credits" value="{{data.currency.credits}}"
+                               placeholder="{{localize 'WWNPRETTY.CurrencyCredits'}}"/>
+
+
+<!--                    </label>-->
+                </li>
+                <li class = "currencyimage">
+                    <i class="fas fa-coins" title = "Credits"></i>
+                </li>
+            </ul>
+
+
+            <ul class="attributes flexrow">
+                <li class="attribute health no-sub">
+                    <h4 class="attribute-name box-title">{{ localize "WWNPRETTY.HitPoints" }}</h4>
+                    <div class="attribute-value multiple no-sub">
+                        <input name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}" placeholder="10" data-dtype="Number"/>
+                        <span class="sep"> / </span>
+                        <input name="data.attributes.hp.max" type="text" value="{{data.attributes.hp.max}}" placeholder="10" data-dtype="Number"/>
+                    </div>
+<!--                    <footer class="attribute-footer">-->
+<!--                        <input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'WWNPRETTY.Value' }}"-->
+<!--                               value="{{data.attributes.hp.temp}}" data-dtype="Number"/>-->
+<!--                        <input name="data.attributes.hp.tempmax" type="text" class="temphp" placeholder="+{{ localize 'WWNPRETTY.Max' }}"-->
+<!--                               value="{{data.attributes.hp.tempmax}}" data-dtype="Number"/>-->
+<!--                    </footer>-->
+                </li>
+
+                <li class="attribute">
+                    <h4 class="attribute-name box-title">{{ localize "WWNPRETTY.HitDice" }}</h4>
+                    <div class="attribute-value multiple no-sub">
+                        <label class="hit-dice">{{data.details.level}} D6 + {{data.abilities.con.mod}}</label>
+                    </div>
+<!--                    <footer class="attribute-footer">-->
+<!--                        <a class="rest short-rest">{{ localize "WWNPRETTY.RestS" }}</a>-->
+<!--                        <a class="rest long-rest">{{ localize "WWNPRETTY.RestL" }}</a>-->
+<!--                    </footer>-->
+                </li>
+
+                {{#if isCharacter}}
+                <li class="attribute movement">
+                    <h4 class="attribute-name box-title">
+                        {{ localize "WWNPRETTY.ArmorClass" }}
+                        <a class="config-button" data-action="armor" title="{{localize 'WWNPRETTY.ArmorConfig'}}"><i class="fas fa-cog"></i></a>
+                    </h4>
+                    <div class="attribute-value attributable" data-property="attributes.ac">
+                        <span>{{data.attributes.ac.value}}</span>
+                    </div>
+                </li>
+                {{/if}}
+
+                <li class="attribute movement">
+                    <h4 class="attribute-name box-title">
+                        {{ localize "WWNPRETTY.Movement" }}
+                        <a class="config-button" data-action="movement" title="{{localize 'WWNPRETTY.MovementConfig'}}"><i class="fas fa-cog"></i></a>
+                    </h4>
+                    <div class="attribute-value">
+                        <span>{{movement.primary}}</span>
+                    </div>
+                    <footer class="attribute-footer">
+                        <span>{{movement.special}}</span>
+                    </footer>
+                </li>
+
+                <li class="attribute initiative">
+                    <h4 class="attribute-name box-title rollable" data-action="rollInitiative">{{ localize "WWNPRETTY.Initiative" }}</h4>
+                    <div class="attribute-value no-sub">
+                        <span>{{numberFormat data.attributes.init.value decimals=0 sign=true}}</span>
+                    </div>
+<!--                    <footer class="attribute-footer">-->
+<!--                        I'm removing this for now, to make room for possible save buttons. -Lofty -->
+<!--                        <span>{{ localize "WWNPRETTY.Modifier" }}</span>-->
+<!--                        <input name="data.attributes.init.value" type="text" data-dtype="Number" placeholder="0"-->
+<!--                               value="{{numberFormat data.attributes.init.value decimals=0 sign=true}}"/>-->
+<!--                    </footer>-->
+                </li>
+            </ul>
+
+        </section>
+    </header>
+
+    {{!-- Character Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="attributes">{{ localize "WWNPRETTY.Attributes" }}</a>
+        <a class="item" data-tab="inventory">{{ localize "WWNPRETTY.Inventory" }}</a>
+        <!--        I've renamed spellbook to psionics. Just the name has changed. -Lofty-->
+        <a class="item" data-tab="spellbook">{{ localize "WWNPRETTY.Spellbook" }}</a>
+        <a class="item" data-tab="features">{{ localize "WWNPRETTY.Features" }}</a>
+        <a class="item" data-tab="effects">{{ localize "WWNPRETTY.SenseEffects" }}</a>
+        <a class="item" data-tab="biography">{{ localize "WWNPRETTY.Biography" }}</a>
+    </nav>
+
+    {{!-- Character Sheet Body --}}
+    <section class="sheet-body">
+
+        <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+
+            {{!-- Ability Scores --}}
+            <ul class="ability-scores flexrow">
+            {{#each data.abilities as |ability id|}}
+                <li class="ability" data-ability="{{id}}">
+                    <h4 class="ability-name box-title rollable">{{ability.label}}</h4>
+                    <input class="ability-score" name="data.abilities.{{id}}.value" type="number" value="{{ability.value}}" placeholder="10"/>
+                    <div class="ability-modifiers flexrow">
+                        <input class="ability-mod ability-other" title="Other" name="data.abilities.{{id}}.other" type = "number" value="{{ability.other}}" placeholder = "0"/>
+                        <span class="ability-mod ability-right" title="Modifier" id="att-mod">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+                    </div>
+                </li>
             {{/each}}
-            {{#each itemTypes.armor as |item id|}}
-            <div class="w-36 flex-grow">
-            {{> "systems/swnr/templates/actors/fragments/item.html" type="character"  item=item id=id}}
-            </div>
-            {{/each}} 
-            {{#each itemTypes.item as |item id|}}
-            <div class="w-36 flex-grow">
-            {{> "systems/swnr/templates/actors/fragments/item.html" type="character"  item=item id=id}}
-            </div>
+            </ul>
+
+            {{!-- Skills --}}
+            <ul class="skills-list">
+            {{#each data.skills as |skill s|}}
+                <li class="skill flexrow" data-skill="{{s}}">
+<!--                    <input type="hidden" name="data.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"/>-->
+
+                    <h4 class="skill-name rollable">{{skill.label}}</h4>
+                    <input class="skill-mod" name = "data.skills.{{s}}.value" value="{{skill.value}}"
+                           title = "Level" type="number" placeholder="0" />
+                    <input class="skill-other" name = "data.skills.{{s}}.prof" value="{{skill.prof}}"
+                           title = "Other" type="number" placeholder="0" />
+
+
+                </li>
             {{/each}}
-          </div>
+            </ul>
+
+            <section class="center-pane flexcol">
+                <ul class="attributes flexrow boxes">
+
+                    <!--                    Save buttons from Lofty-->
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves = "psave"> Physical Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.psave" type="text"> vs {{data.attributes.saves.psave}} </span>
+                        </div>
+                    </li>
+                </div>
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves = "esave"> Evasion Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.esave" type="text"> vs {{data.attributes.saves.esave}} </span>
+                        </div>
+                    </li>
+                </div>
+                <div>
+                    <li class="attribute resource save-box">
+                        <h4 class="save-click attribute-name box-title rollable" data-saves="msave"> Mental Save </h4>
+                        <div class="attribute-value">
+                            <span name="data.attributes.saves.msave" type="text"> vs {{data.attributes.saves.msave}} </span>
+                        </div>
+                    </li>
+                </div>
+
+                </ul>
+
+                {{!-- Body Attributes --}}
+                <ul class="attributes flexrow">
+
+<!--                    System Strain from Lofty-->
+                    <div>
+                        <li class="attribute resource">
+                            <h4 class="attribute-name box-title"> System Strain </h4>
+                            <div class="attribute-value">
+                                <input name="data.attributes.strain.value" type="text" value="{{data.attributes.strain.value}}"
+                                       data-dtype="Number" placeholder= "0"/>
+                                <span class="sep"> /&nbsp; </span>
+                                <span> {{data.abilities.con.value}} </span>
+                            </div>
+                        </li>
+                    </div>
+
+<!--                    Lofty putting in resource 1 and 2 as counters instead-->
+
+                    <div>
+                        <li class="attribute resource">
+                            <h4 class="attribute-name custom-resource">
+                                <input name="data.details.counters.one" type="text" value="{{data.details.counters.one}}"
+                                       placeholder="Resource 1" />
+                            </h4>
+                            <div class="attribute-value custom-value char-counter">
+                                <input name="data.details.counters.oneval" type="text" value="{{data.details.counters.oneval}}"
+                                       data-dtype="text" placeholder= "0"/>
+                            </div>
+                        </li>
+                    </div>
+                    <div>
+                        <li class="attribute resource">
+                            <h4 class="attribute-name custom-resource">
+                                <input name="data.details.counters.two" type="text" value="{{data.details.counters.two}}"
+                                       placeholder="Resource 2" />
+                            </h4>
+                            <div class="attribute-value custom-value char-counter">
+                                <input name="data.details.counters.twoval" type="text" value="{{data.details.counters.twoval}}"
+                                       data-dtype="text" placeholder= "0"/>
+                            </div>
+                        </li>
+                    </div>
+
+                    {{#each resources as |res|}}
+                    <div>
+                        <li class="attribute resource">
+                            <h4 class="attribute-name custom-resource">
+                                <input name="data.resources.{{res.name}}.label" type="text" value="{{res.label}}"
+                                       placeholder="{{res.placeholder}}" />
+                            </h4>
+                            <div class="attribute-value custom-value">
+                                <input name="data.resources.{{res.name}}.value" type="number" value="{{res.value}}" placeholder="0"/>
+                                <span class="sep"> / </span>
+                                <input name="data.resources.{{res.name}}.max" type="number" value="{{res.max}}" placeholder="0"/>
+                            </div>
+                        </li>
+                    </div>
+                    {{/each}}
+                </ul>
+
+
+<!--            Text Boxes By Lofty-->
+
+                <div class="flexrow front-info">
+                    <div class="flexcol info">
+                        <textarea name="data.details.info.value" placeholder="Ongoing Effects" class="npc-text-area">{{data.details.info.value}}</textarea>
+
+                    </div>
+                    <div class="flexcol info">
+                        <textarea name="data.details.scars.value" placeholder="Notes" class="npc-text-area">{{data.details.scars.value}}</textarea>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="tab skills" data-group="primary" data-tab="skills">
-          {{#if (ne itemTypes.skill.length 0)}}
-          <div class="flex gap-2 pt-1 flex-wrap">
-            {{#each itemTypes.skill as |item id|}} {{>
-            "systems/swnr/templates/actors/fragments/skill.html" item=item
-            type=actor.data.type}} {{/each}}
-          </div>
-          {{else}}
-          <button class="skill-load-button" style="margin-top: 3em"
-            type="button">
-            No skills? Click here to add some!
-          </button>
-          {{/if}}
+
+        {{!-- Inventory Tab --}}
+        <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
+            {{> "systems/wwnpretty/templates/actors/parts/actor-inventory.html" sections=inventory}}
         </div>
-        <div class="tab foci" data-group="primary" data-tab="foci">
-          <div class="flex flex-wrap gap-2">
-            {{#each itemTypes.focus as |item id|}} {{>
-            "systems/swnr/templates/actors/fragments/focus.html" item=item
-            type=actor.data.type}} {{/each}}
-          </div>
+
+        {{!-- Features Tab --}}
+        <div class="tab features flexcol" data-group="primary" data-tab="features">
+            {{> "systems/wwnpretty/templates/actors/parts/actor-features.html" sections=features}}
         </div>
-      </section>
-    </div>
-  </div>
+
+        {{!-- Psionics Tab --}}
+        <div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
+            {{> "systems/wwnpretty/templates/actors/parts/actor-spellbook.html"}}
+        </div>
+
+        {{!-- Extras Tab --}}
+        <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+            <div class = "flexrow">
+                <div class = "flexcol extras-info info">
+                    <textarea name="data.details.extrasone.value" placeholder="Notes+" class="npc-text-area">{{data.details.extrasone.value}}</textarea>
+                </div>
+                <div class = "flexcol extras-info info">
+                    <textarea name="data.details.extrastwo.value" placeholder="Notes++" class="npc-text-area">{{data.details.extrastwo.value}}</textarea>
+                </div>
+            </div>
+            <div class = "extras-list">
+            {{> "systems/wwnpretty/templates/actors/parts/actor-traits.html"}}
+            </div>
+<!--            {{> "systems/wwnpretty/templates/actors/parts/active-effects.html"}}-->
+        </div>
+
+        {{!-- Biography Tab --}}
+        <div class="tab flexrow" data-group="primary" data-tab="biography">
+            <div class="characteristics flexcol front-info">
+                <label>{{ localize "WWNPRETTY.Appearance" }}</label>
+                <textarea name="data.details.appearance">{{data.details.appearance}}</textarea>
+                <label>{{ localize "WWNPRETTY.Ideals" }}</label>
+                <textarea name="data.details.ideal">{{data.details.ideal}}</textarea>
+                <label>{{ localize "WWNPRETTY.PersonalityTraits" }}</label>
+                <textarea name="data.details.trait">{{data.details.trait}}</textarea>
+                <label>{{ localize "WWNPRETTY.Bonds" }}</label>
+                <textarea name="data.details.bond">{{data.details.bond}}</textarea>
+            </div>
+            <div class="biography">
+                {{editor content=data.details.biography.value target="data.details.biography.value" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </section>
 </form>

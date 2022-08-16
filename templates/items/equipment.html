@@ -1,0 +1,122 @@
+
+
+
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+
+
+
+    {{!-- Item Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+
+        <div class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'WWNPRETTY.ItemName' }}"/>
+            </h1>
+
+            <div class="item-subtitle">
+                <h4 class="item-type">{{itemType}}</h4>
+                <span class="item-status">{{itemStatus}}</span>
+            </div>
+
+            <ul class="summary flexrow">
+                <li>
+                    <span> AC:&nbsp; {{data.armor.value}}</span>
+<!--                        {{ lookup config.equipmentTypes data.location }}-->
+                </li>
+                <li>
+                    <input type="text" name="data.rarity" value="{{data.rarity}}" placeholder="{{ localize 'WWNPRETTY.Rarity' }}"/>
+                </li>
+                <li>
+                    <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'WWNPRETTY.Source' }}"/>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    {{!-- Item Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="description">{{ localize "WWNPRETTY.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "WWNPRETTY.Details" }}</a>
+    </nav>
+
+    {{!-- Item Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        {{> "systems/wwnpretty/templates/items/parts/item-description.html"}}
+
+        {{!-- Details Tab --}}
+        <div class="tab details" data-group="primary" data-tab="details">
+            <h3 class="form-header">{{ localize "WWNPRETTY.ItemEquipmentDetails" }}</h3>
+
+            {{!-- Equipment Type --}}
+            <div class="form-group">
+                <label>{{ localize "WWNPRETTY.ItemEquipmentType" }}</label>
+                <select name="data.armor.type">
+<!--                    {{#select data.armor.type}}-->
+<!--                    <option value=""></option>-->
+                    {{#each config.equipmentTypes as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+<!--                    {{/select}}-->
+<!--                    {{selectOptions config.equipmentTypes selected=data.armor.type blank=""}}-->
+                </select>
+            </div>
+
+            {{#unless isMountable}}
+            <div class="form-group">
+                <label>{{localize "WWNPRETTY.Attunement"}}</label>
+                <select name="data.attunement" data-dtype="Number">
+                    {{selectOptions config.attunements selected=data.attunement localize=true}}
+                </select>
+            </div>
+
+            {{!-- Equipment Status --}}
+            <div class="form-group stacked">
+<!--                <label>{{ localize "WWNPRETTY.ItemEquipmentStatus" }}</label>-->
+<!--                <div class="form-fields">-->
+<!--                    <label class="checkbox">-->
+<!--                        <input type="checkbox" name="data.proficient" {{checked data.proficient}}/> {{ localize "WWNPRETTY.Proficient" }}-->
+<!--                    </label>-->
+<!--                    <label class="checkbox">-->
+<!--                        <input type="checkbox" name="data.identified" {{checked data.identified}}/> {{ localize "WWNPRETTY.Identified" }}-->
+<!--                    </label>-->
+<!--                </div>-->
+                {{/unless}}
+
+                {{!-- Armor Class --}}
+                <div class="form-group">
+                    <label>{{ localize "WWNPRETTY.ArmorClass" }}</label>
+                    <div class="form-fields">
+                       <input type="text" name="data.armor.value" value="{{data.armor.value}}" data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- Dexterity Modifier --}}
+            <div class="form-group">
+                <label>{{ localize "WWNPRETTY.ItemEquipmentDexMod" }}</label>
+                <div class="form-fields">
+                   <input type="text" name="data.armor.dex" value="{{data.armor.dex}}" data-dtype="Number" placeholder="{{ localize 'WWNPRETTY.Unlimited' }}"/>
+                </div>
+            </div>
+
+            {{!-- Vulnerabilities -Lofty --}}
+            <div class="form-group">
+                <label>Vulnerabilities and Resistances</label>
+                <div class="form-fields">
+                    <input type="text" name="data.vulnresist" value="{{data.vulnresist}}" placeholder="{{ localize 'WWNPRETTY.None' }}"/>
+                </div>
+            </div>
+
+
+
+            <h3 class="form-header">{{ localize "WWNPRETTY.ItemEquipmentAction" }}</h3>
+
+            {{!-- Item Action Template --}}
+            {{> "systems/wwnpretty/templates/items/parts/item-action.html"}}
+        </div>
+    </section>
+</form>

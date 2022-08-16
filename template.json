@@ -1,247 +1,643 @@
 {
   "Actor": {
-    "types": [
-      "character",
-      "npc"
-    ],
+    "types": ["character", "npc"],
     "templates": {
-      "living": {
-        "health": {
-          "value": 10,
-          "max": 10
-        },
-        "baseAc": 10,
-        "ab": 0,
-        "systemStrain": {
-          "value": 0,
-          "permanent": 0
-        },
-        "effort": {
-          "bonus": 0,
-          "current": 0,
-          "scene": 0,
-          "day": 0
-        }
-      },
-      "encumbrance": {
-        "encumbrance": {
-          "stowed": {
-            "value": "number",
-            "max": "number"
-          },
-          "ready": {
-            "value": "number",
-            "max": "number"
-          }
-        }
-      },
-      "stats": {
-        "stats": {
+      "common": {
+        "abilities": {
           "str": {
-            "base": 10,
-            "bonus": 0,
-            "boost": 0
-          },
-          "dex": {
-            "base": 10,
-            "bonus": 0,
-            "boost": 0
+            "value": 10,
+            "other": 0,
+            "proficient": 0,
+            "mod": 666,
+            "input": 10
           },
           "con": {
-            "base": 10,
-            "bonus": 0,
-            "boost": 0
+            "value": 10,
+            "other": 0,
+            "proficient": 0,
+            "mod": 66,
+            "input": 10
+          },
+          "dex": {
+            "value": 10,
+            "other": 0,
+            "proficient": 0,
+            "mod": 666,
+            "input": 10
           },
           "int": {
-            "base": 10,
-            "bonus": 0,
-            "boost": 0
+            "value": 10,
+            "other": 0,
+            "proficient": 0,
+            "mod": 666,
+            "input": 10
           },
           "wis": {
-            "base": 10,
-            "bonus": 0,
-            "boost": 0
+            "value": 10,
+            "other": 0,
+            "proficient": 0,
+            "mod": 666,
+            "input": 10
           },
           "cha": {
-            "base": 10,
+            "value": 10,
+            "other": 0,
+            "proficient": 0,
+            "mod": 666,
+            "input": 10
+          }
+        },
+        "attributes": {
+          "level": {
+            "value": 0
+          },
+          "ac": {
+            "flat": null,
+            "calc": "default",
+            "formula": ""
+          },
+          "hp": {
+            "value": 1,
+            "min": 0,
+            "max": 1,
+            "temp": 0,
+            "tempmax": 0
+          },
+          "init": {
+            "value": 0,
             "bonus": 0,
-            "boost": 0
+            "custom": 0
+          },
+          "movement": {
+            "burrow": 0,
+            "climb": 0,
+            "drive": 0,
+            "fly": 0,
+            "swim": 0,
+            "walk": 30,
+            "units": "ft",
+            "hover": false
+          },
+          "strain": {
+            "value":0,
+            "min": 0,
+            "max": 10
+          },
+          "effort": {
+            "value": 0,
+            "max": 0,
+            "toppsi": 0
+          },
+          "saves": {
+            "psave": 16,
+            "esave": 16,
+            "msave": 16,
+            "morale": 0
+          }
+        },
+        "details": {
+          "biography": {
+            "value": "",
+            "public": ""
+          },
+          "info": {
+            "value": ""
+          },
+          "scars": {
+            "value": ""
+          },
+          "extrasone": {
+            "value": ""
+          },
+          "extrastwo": {
+            "value": ""
+          },
+
+          "counters": {
+            "one": "",
+            "oneval": "",
+            "two": "",
+            "twoval": ""
+          }
+        },
+        "traits": {
+          "size": "med",
+          "di": {
+            "value": [],
+            "custom": ""
+          },
+          "dr": {
+            "value": [],
+            "custom": ""
+          },
+          "dv": {
+            "value": [],
+            "custom": ""
+          },
+          "ci": {
+            "value": [],
+            "custom": ""
+          }
+        },
+        "currency": {
+          "credits": ""
+        }
+      },
+      "creature": {
+        "attributes": {
+          "senses": {
+            "darkvision": 0,
+            "heatvision": 0,
+            "tremorsense": 0,
+            "units": "ft",
+            "special": ""
+          },
+          "spellcasting": "int"
+        },
+        "details": {
+          "alignment": "",
+          "race": ""
+        },
+        "skills": {
+          "adm": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "con": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "exe": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "fix": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "hea": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "kno": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "lea": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "per": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "not": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "pil": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "pro": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "sho": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "sne": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "pun": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "stb": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "sur": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "tal": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "trd": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "wor": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          }
+        },
+        "traits": {
+          "languages": {
+            "value": [],
+            "custom": ""
+          }
+        },
+        "spells": {
+          "spell1": {
+            "value": 0,
+            "override": null
+          },
+          "spell2": {
+            "value": 0,
+            "override": null
+          },
+          "spell3": {
+            "value": 0,
+            "override": null
+          },
+          "spell4": {
+            "value": 0,
+            "override": null
+          },
+          "spell5": {
+            "value": 0,
+            "override": null
+          },
+          "spell6": {
+            "value": 0,
+            "override": null
+          },
+          "spell7": {
+            "value": 0,
+            "override": null
+          },
+          "spell8": {
+            "value": 0,
+            "override": null
+          },
+          "spell9": {
+            "value": 0,
+            "override": null
+          },
+          "pact": {
+            "value": 0,
+            "override": null
+          }
+        },
+        "bonuses": {
+          "encumbrance": {
+            "bonusReadied": 0,
+            "bonusCarried": 0
+          },
+          "mwak": {
+            "attack": "",
+            "damage": ""
+          },
+          "rwak": {
+            "attack": "",
+            "damage": ""
+          },
+          "msak": {
+            "attack": "",
+            "damage": ""
+          },
+          "rsak": {
+            "attack": "",
+            "damage": ""
+          },
+          "abilities": {
+            "check": "",
+            "save": "",
+            "skill": ""
+          },
+          "spell":  {
+            "dc": ""
           }
         }
       }
     },
+    "htmlFields": ["details.biography.value", "details.biography.public", "details.scars.value",
+    "details.info.value","details.extrasone.value","details.extrastwo.value"],
     "character": {
-      "templates": [
-        "living",
-        "stats",
-        "encumbrance"
-      ],
-      "level": {
-        "value": 1,
-        "exp": 0,
-        "expToLevel": 3
+      "templates": ["common", "creature"],
+      "attributes": {
+        "death": {
+          "success": 0,
+          "failure": 0
+        },
+        "encumbrance": {
+          "value": null,
+          "max": null
+        },
+        "readiedEnc": {
+          "value": null,
+          "max": null
+        },
+        "exhaustion": 0,
+        "inspiration": 0
       },
-      "goals": [],
-      "class": "",
-      "species": "",
-      "homeworld": "",
-      "background": "",
-      "employer": "",
-      "biography": "",
-      "credits": {
-        "debt": 0,
-        "balance": 0,
-        "owed": 0
+      "details": {
+        "background": "",
+        "focus": "",
+        "xp": {
+          "value": 0,
+          "min": 0,
+          "max": 300
+        },
+        "appearance": "",
+        "trait": "",
+        "ideal": "",
+        "bond": "",
+        "flaw": "",
+        "other": ""
+      },
+      "resources": {
+        "primary": {
+          "value": "0",
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        },
+        "secondary": {
+          "value": "0",
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        },
+        "tertiary": {
+          "value": 0,
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        },
+        "quartary": {
+          "value": 0,
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        },
+        "quinary": {
+          "value": 0,
+          "max": 0,
+          "sr": 0,
+          "lr": 0
+        }
+      },
+      "traits": {
+        "weaponProf": {
+          "value": [],
+          "custom": ""
+        },
+        "armorProf": {
+          "value": [],
+          "custom": ""
+        },
+        "toolProf": {
+          "value": [],
+          "custom": ""
+        }
       }
     },
     "npc": {
-      "templates": [
-        "living"
-      ],
-      "skillBonus": 0,
-      "attacks": {
-        "bonusDamage": 0,
-        "number": 1
-      },
-      "armorType": "street",
-      "speed": 10,
-      "moralScore": 6,
-      "saves": 15,
-      "effort": {
-        "value": 0,
-        "max": 0
-      },
-      "reaction": "unknown",
-      "homeworld": "",
-      "faction": "",
-      "notes": {
-        "left": {
-          "label": "Goals",
-          "contents": ""
+      "templates": ["common", "creature"],
+      "details": {
+        "type": "",
+        "environment": "",
+        "cr": 1,
+        "spellLevel": 0,
+        "attacks": 1,
+        "npcHitDice": "1d6",
+        "xp": {
+          "value": 10
         },
-        "right": {
-          "label": "Bio/Notes",
-          "contents": ""
+        "source": ""
+      },
+      "resources": {
+        "legact": {
+          "value": 0,
+          "max": 0
+        },
+        "legres": {
+          "value": 0,
+          "max": 0
+        },
+        "lair": {
+          "value": 0,
+          "initiative": 0
         }
       }
     }
   },
   "Item": {
-    "types": [
-      "class",
-      "armor",
-      "weapon",
-      "power",
-      "focus",
-      "item",
-      "skill"
-    ],
+    "types": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"],
     "templates": {
-      "modBase": {
-        "pretech": {
+      "itemDescription": {
+        "description": {
+          "value": "",
+          "chat": "",
+          "unidentified": ""
+        },
+        "source": ""
+      },
+      "physicalItem": {
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attuned": false,
+        "attunement": 0,
+        "carried": false,
+        "location": "",
+        "rarity": "",
+        "identified": true,
+        "pcondition": false
+      },
+      "activatedEffect": {
+        "activation": {
+          "type": "",
           "cost": 0,
-          "perHull": false
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": "",
+          "ability": "",
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": 0,
+          "max": 0,
+          "per": null
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null
         }
       },
-      "baseItem": {
-        "encumbrance": 0,
-        "cost": 0,
-        "tl": 4,
-        "quality": "stock",
-        "location": "other"
+      "techLevel": {
+        "value": ""
       },
-      "description": {
-        "description": ""
+      "action": {
+        "ability": null,
+        "actionType": null,
+        "attackBonus": 0,
+        "damageBonus": 0,
+        "chatFlavor": "",
+        "critical": null,
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        }
+      },
+      "mountable": {
+        "armor": {
+          "value": 10
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        }
+      }
+    },
+    "htmlFields": ["description.value", "description.chat", "description.unidentified"],
+    "backpack": {
+      "templates": ["itemDescription", "physicalItem"],
+      "capacity": {
+        "type": "weight",
+        "value": 0,
+        "weightless": false
+      },
+      "currency": {
+        "credits": 0
       }
     },
     "class": {
-      "templates": [
-        "description"
-      ]
+      "templates": ["itemDescription"],
+      "levels": 1,
+      "subclass": "",
+      "hitDice": "d6",
+      "hitDiceUsed": 0,
+      "skills": {
+        "number": 2,
+        "choices": [],
+        "value": []
+      },
+      "spellcasting": "none"
     },
-    "armor": {
-      "templates": [
-        "baseItem",
-        "description"
-      ],
-      "ac": 10,
-      "type": "street",
-      "use": false,
-      "shield": false
+    "consumable": {
+      "templates": ["itemDescription", "physicalItem", "activatedEffect", "action"],
+      "consumableType": "drug",
+      "uses": {
+        "autoDestroy": false
+      }
+    },
+    "equipment": {
+      "templates": ["itemDescription", "physicalItem", "activatedEffect", "action", "mountable"],
+      "armor": {
+        "type": "light",
+        "value": 10,
+        "dex": null
+      },
+      "speed": {
+        "value": null,
+        "conditions": ""
+      },
+      "strength": 0,
+      "stealth": false,
+      "proficient": true,
+      "vulnresist": ""
+    },
+    "feat": {
+      "templates": ["itemDescription", "activatedEffect", "action"],
+      "requirements": "",
+      "recharge": {
+        "value": null,
+        "charged": false,
+      "featLevel": ""
+      }
+    },
+    "loot": {
+      "templates": ["itemDescription", "physicalItem"]
+    },
+    "tool": {
+      "templates": ["itemDescription", "physicalItem"],
+      "toolType": "",
+      "ability": "int",
+      "chatFlavor": "",
+      "proficient": 0
+    },
+    "spell": {
+      "templates": ["itemDescription", "activatedEffect", "action"],
+      "level": 1,
+      "school": "",
+      "components": {
+        "value": "",
+        "vocal": false,
+        "somatic": false,
+        "material": false,
+        "ritual": false,
+        "concentration": false,
+        "other": false
+      },
+      "materials": {
+        "value": "",
+        "consumed": false,
+        "cost": 0,
+        "supply": 0
+      },
+      "preparation": {
+        "mode": "prepared",
+        "prepared": false
+      },
+      "scaling": {
+        "mode": "none",
+
+        "shockDam": null
+      }
     },
     "weapon": {
-      "templates": [
-        "baseItem",
-        "description"
-      ],
-      "stat": "dex",
-      "secondStat": "none",
-      "skill": "",
-      "skillBoostsDamage": false,
-      "shock": {
-        "dmg": 0,
-        "ac": 15
-      },
-      "ab": 0,
-      "ammo": {
-        "longReload": false,
-        "suppress": false,
-        "type": "none",
-        "max": 0,
-        "value": 0,
-        "burst": false
-      },
-      "range": {
-        "normal": 1,
-        "max": 2
-      },
-      "damage": "d4"
-    },
-    "power": {
-      "templates": [
-        "description"
-      ],
-      "source": "",
-      "level": 0
-    },
-    "item": {
-      "templates": [
-        "baseItem",
-        "description"
-      ],
-      "bundle": {
-        "amount": 1,
-        "bundled": false
-      },
-      "quantity": 1
-    },
-    "focus": {
-      "templates": [
-        "description"
-      ],
-      "level1": "",
-      "level2": ""
-    },
-    "modItem": {
-      "templates": [
-        "description",
-        "modBase"
-      ]
-    },
-    "modShip": {
-      "templates": [
-        "description",
-        "modBase"
-      ]
-    },
-    "skill": {
-      "templates": [
-        "description"
-      ],
-      "rank": -1,
-      "defaultStat": "ask",
-      "pool": "2D6",
-      "source": ""
+      "templates": ["itemDescription", "physicalItem" ,"activatedEffect", "action", "mountable"],
+      "weaponType": "simpleM",
+      "properties": {},
+      "proficient": true,
+      "magsize": null
     }
   }
 }
