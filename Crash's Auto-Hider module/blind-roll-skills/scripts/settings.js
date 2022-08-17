@@ -69,8 +69,16 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hideHeal", {
+    game.settings.register("blind-roll-skills", "hideHeal", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHideHeal"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+  game.settings.register("blind-roll-skills", "hideHear", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideHear"),
     scope: "world",
     config: true,
     default: false,
@@ -157,8 +165,24 @@ export const registerSettings = function() {
     type: Boolean
   });
 
+ game.settings.register("blind-roll-skills", "hideSee", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideSee"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
   game.settings.register("blind-roll-skills", "hideSneak", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHideSneak"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+   game.settings.register("blind-roll-skills", "hideSmell", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideSmell"),
     scope: "world",
     config: true,
     default: false,

@@ -184,6 +184,11 @@
             "ability": "str",
             "diceNum": "2"
           },
+          "her": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
           "kno": {
             "value": -1,
             "ability": "str",
@@ -214,7 +219,17 @@
             "ability": "str",
             "diceNum": "2"
           },
+          "see": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
           "sho": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+           "sme": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
