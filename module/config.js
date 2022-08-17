@@ -615,14 +615,14 @@ WWNPRETTY.spellSchools = {
   // "enc": "WWNPRETTY.SchoolEnc",
   // "evo": "WWNPRETTY.SchoolEvo",
   // "ill": "WWNPRETTY.SchoolIll",
-  // "nec": "WWNPRETTY.SchoolNec",
   // "trs": "WWNPRETTY.SchoolTrs"
+  // "tep": "WWNPRETTY.SchoolTap",
+  // "tor": "WWNPRETTY.SchoolTep",
   "bio": "WWNPRETTY.SchoolBio",
   "met": "WWNPRETTY.SchoolMet",
   "pre": "WWNPRETTY.SchoolPre",
-  "tek": "WWNPRETTY.SchoolTek",
-  "tep": "WWNPRETTY.SchoolTap",
-  "tor": "WWNPRETTY.SchoolTep"
+  "nec": "WWNPRETTY.SchoolNec",
+  "tek": "WWNPRETTY.SchoolTek"
 };
 
 // Spell Levels
@@ -631,8 +631,8 @@ WWNPRETTY.spellLevels = {
   1: "WWNPRETTY.SpellLevel1",
   2: "WWNPRETTY.SpellLevel2",
   3: "WWNPRETTY.SpellLevel3",
-  4: "WWNPRETTY.SpellLevel4"
-  // 5: "WWNPRETTY.SpellLevel5",
+  4: "WWNPRETTY.SpellLevel4",
+  5: "WWNPRETTY.SpellLevel5"
   // 6: "WWNPRETTY.SpellLevel6",
   // 7: "WWNPRETTY.SpellLevel7",
   // 8: "WWNPRETTY.SpellLevel8",
