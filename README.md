@@ -3,9 +3,9 @@
 This is not the official system for WWN, so you will have to manually install this one. To install,
 click 'install system' in Foundry, and then submit this system's manifest: https://raw.githubusercontent.com/puddinbustra/wwnpretty/main/system.json
 
-To install my version of Crash's roll hider, drop 'blind-roll-skills' into the "modules" folder in your foundry directory. It should then automatically show up. 
+To install my version of Crash's roll hider, drop 'blind-roll-skills' from this system into the "modules" folder in your foundry directory. It should then automatically show up in Foundry's modules tab. 
 
-Please note this system probably only compatible with Foundry 8.7 or so, so you may need to actively install that version from the Foundry website. 
+Please note this system probably only compatible with Foundry 0.8.8 or so, so you may need to actively install that version from the Foundry website. 
 
 # About
 
@@ -17,7 +17,7 @@ A preview of the sheet:
 # Features
 - Included my altered version of Crash's roll hider. 
 - Aesthetically pleasing.
-- Familiar with people who use the 5e sheet by Atropos, which this sheet is made from.
+- Enough space and information to conveniently manage both PCs and NPCs.
 
 
 # Support
