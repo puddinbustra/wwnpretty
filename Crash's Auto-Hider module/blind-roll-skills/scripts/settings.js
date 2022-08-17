@@ -53,16 +53,32 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hideExert", {
-    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideExert"),
+  game.settings.register("blind-roll-skills", "hideConnect", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideConnect"),
     scope: "world",
     config: true,
     default: false,
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hideFix", {
+  game.settings.register("blind-roll-skills", "hideNotice", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideNotice"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+    game.settings.register("blind-roll-skills", "hideFix", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHideFix"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+  game.settings.register("blind-roll-skills", "hideExert", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideExert"),
     scope: "world",
     config: true,
     default: false,
@@ -85,14 +101,6 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hideConnect", {
-    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideConnect"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-
   game.settings.register("blind-roll-skills", "hideKnow", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHideKnow"),
     scope: "world",
@@ -109,22 +117,6 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hideNotice", {
-    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideNotice"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-
-  game.settings.register("blind-roll-skills", "hideTrade", {
-    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideTrade"),
-    scope: "world",
-    config: true,
-    default: false,
-    type: Boolean
-  });
-
   game.settings.register("blind-roll-skills", "hidePilot", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHidePilot"),
     scope: "world",
@@ -132,6 +124,15 @@ export const registerSettings = function() {
     default: false,
     type: Boolean
   });
+
+  game.settings.register("blind-roll-skills", "hidePerformance", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHidePerformance"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
 
   game.settings.register("blind-roll-skills", "hideProgram", {
     name: game.i18n.localize("BLINDROLLSKILLS.SettingHideProgram"),
@@ -149,8 +150,16 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hidePerformance", {
-    name: game.i18n.localize("BLINDROLLSKILLS.SettingHidePerformance"),
+  game.settings.register("blind-roll-skills", "hideTalk", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideTalk"),
+    scope: "world",
+    config: true,
+    default: false,
+    type: Boolean
+  });
+
+    game.settings.register("blind-roll-skills", "hideSail", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideSail"),
     scope: "world",
     config: true,
     default: false,
@@ -205,8 +214,8 @@ export const registerSettings = function() {
     type: Boolean
   });
 
-  game.settings.register("blind-roll-skills", "hideTalk", {
-    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideTalk"),
+  game.settings.register("blind-roll-skills", "hideTrade", {
+    name: game.i18n.localize("BLINDROLLSKILLS.SettingHideTrade"),
     scope: "world",
     config: true,
     default: false,

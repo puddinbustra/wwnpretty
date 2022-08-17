@@ -169,12 +169,17 @@
             "ability": "str",
             "diceNum": "2"
           },
-          "exe": {
+          "not": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
           },
           "fix": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "exe": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
@@ -199,22 +204,32 @@
             "ability": "str",
             "diceNum": "2"
           },
-          "per": {
-            "value": -1,
-            "ability": "str",
-            "diceNum": "2"
-          },
-          "not": {
-            "value": -1,
-            "ability": "str",
-            "diceNum": "2"
-          },
           "pil": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
           },
+          "per": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
           "pro": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "pun": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+           "tal": {
+            "value": -1,
+            "ability": "str",
+            "diceNum": "2"
+          },
+          "sai": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
@@ -239,22 +254,12 @@
             "ability": "str",
             "diceNum": "2"
           },
-          "pun": {
-            "value": -1,
-            "ability": "str",
-            "diceNum": "2"
-          },
           "stb": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
           },
           "sur": {
-            "value": -1,
-            "ability": "str",
-            "diceNum": "2"
-          },
-          "tal": {
             "value": -1,
             "ability": "str",
             "diceNum": "2"
