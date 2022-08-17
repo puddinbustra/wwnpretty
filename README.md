@@ -1,46 +1,34 @@
 
 # Installing
-This is not the official system for WWN:R, so you will have to manually install this one. To install,
+This is not the official system for WWN, so you will have to manually install this one. To install,
 click 'install system' in Foundry, and then submit this system's manifest: https://raw.githubusercontent.com/puddinbustra/wwnpretty/main/system.json
+
+To install my version of Crash's roll hider, drop 'blind-roll-skills' from this system into the "modules" folder in your foundry directory. It should then automatically show up in Foundry's modules tab. 
+
+Please note this system probably only compatible with Foundry 0.8.8 or so, so you may need to actively install that version from the Foundry website. 
 
 # About
 
-This sheet is for Stars Without Number: Revised edition. 
-Since I homebrew a lot of my own content for my own games, I may not add features I don't use - like item compendiums - unless there is significant interest in me doing so.
+This sheet is for Worlds Without Number. I currently have some adjustments such as the notice being skill removed, and replaced by hear, smell and see. If you don't like these and want to change them, modifying the code isn't that hard. 
+
 A preview of the sheet:
 ![Preview](preview.png?raw=true)
 
-# Why This Sheet?
-
-Pros | Cons
------------- | -------------
-Pretty | No ships, vehicles
-Most stats are automated (AC, strain, etc) | No compendiums
-Familiar for 5e sheet users
-Room everywhere for notes
+# Features
+- Included my altered version of Crash's roll hider. 
+- Aesthetically pleasing.
+- Enough space and information to conveniently manage both PCs and NPCs.
 
 
 # Support
 [Buy me a coffee ☕](https://www.buymeacoffee.com/lofty)
 
 # Contact
-If you have any other feedback, be it suggestions or support, send me a message on discord - lofty#8637, or an email at kvrosevelt@gmail.com. If people are enjoying it, I'll be more likely to add more features.
+If you have any other feedback, be it suggestions or support, send me a message on discord - lofty#8637.
 
 # Compatability
 Since this is mostly based off of the 5e character sheet, many of the modules compatible with that should require minimal changes to function here. Stuff like token modules, map modules, and chat modules should work. 
-For example, Crash's autohide rolls work after a few adjustments (I can share my changes if anyone wants to use this module).
-
-# Possible Additions
-- Vehicles
-- Ships
-- Compendiums (if anyone wants to make and export these themselves, I'll add them to the repo)
-
-# Impending Improvements
-- Automate the 'other' ability modifier (will require making a shown vs final attribute)
 
 
 # Maintaining Code
-As long as I am playing this system, I will be maintaining the sheet, which will be at least all of 2021, and hopefully long after. 
-When I stop playing, how well I maintain the code will depend on whether other people are using it. Major foundry updates 
-will probably break the character sheets, so you may want to wait until the sheet is updated for it before you download the 
-new Foundry versions. 
+In the unlikely scenario of this sheet becoming popular, I may update it for new Foundry versions. Otherwise, it will likely remain as it stands. 
