@@ -878,7 +878,7 @@
 }
 .wwnpretty.sheet.actor .tab textarea:focus{
   /*box-shadow:none;*/
-  outline-color: rgba(42, 132, 39, 0.62);
+  outline-color: rgba(32, 100, 30, 0.62);
   outline-width: 2px;
   box-shadow: 0 0 8px #04754a;
 
