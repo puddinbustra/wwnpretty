@@ -97,7 +97,7 @@
 .wwnpretty input[type="text"]:focus,
 .wwnpretty input[type="number"]:focus {
   border: 1px solid #111;
-  box-shadow: 0 0 8px #2301a3;
+  box-shadow: 0 0 8px #046075;
 }
 .wwnpretty input:disabled,
 .wwnpretty select:disabled,
@@ -266,7 +266,7 @@
 .wwnpretty.sheet .editable h4.rollable:hover,
 .wwnpretty.sheet .editable .rollable:hover > h4 {
   color: #000;
-  text-shadow: 0 0 10px #2301a3;
+  text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet span.sep {
   flex: none;
@@ -355,11 +355,11 @@
   border-bottom: 3px solid #b5b3a4;
 }
 .wwnpretty.sheet .sheet-navigation .item:hover {
-  text-shadow: 0 0 10px #2301a3;
+  text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet .sheet-navigation .item.active {
-  border-bottom: 3px solid rgba(56, 45, 161, 0.62);
-  text-shadow: 0 0 10px #2301a3;
+  border-bottom: 3px solid rgba(45, 161, 51, 0.62);
+  text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet .sheet-body {
   flex: 1;
@@ -389,11 +389,11 @@
   margin: 0;
 }
 .wwnpretty.sheet .filter-list .filter-item:hover {
-  text-shadow: 0 0 4px #2301a3;
+  text-shadow: 0 0 4px #046075;
   border-bottom: 3px solid #7a7971;
 }
 .wwnpretty.sheet .filter-list .filter-item.active {
-  border-bottom: 3px solid #2301a3;
+  border-bottom: 3px solid #046075;
 }
 
 
@@ -831,7 +831,7 @@
 
 }
 .wwnpretty.sheet.actor li.save-box{
-  background-color: rgba(142, 30, 30, 0.22);
+  background-color: rgba(11, 51, 17, 0.22);
 }
 .wwnpretty.sheet.actor .front-info{
   margin-top: 5px;
@@ -854,7 +854,7 @@
   /*outline-color: rgba(62, 32, 155, 0);*/
   /*outline-width: 2px;*/
   outline: none;
-  box-shadow: 2px 2px 8px #2301a3;
+  box-shadow: 2px 2px 8px #046075;
   /*background-color: #435fd7;*/
 }
 .wwnpretty.sheet.actor .extras-info{
@@ -878,9 +878,9 @@
 }
 .wwnpretty.sheet.actor .tab textarea:focus{
   /*box-shadow:none;*/
-  outline-color: rgba(39, 41, 132, 0.62);
+  outline-color: rgba(42, 132, 39, 0.62);
   outline-width: 2px;
-  box-shadow: 0 0 8px #2301a3;
+  box-shadow: 0 0 8px #04754a;
 
   /*padding: 3px 0px 3px 3px;*/
   /*margin: 5px 1px 3px 0px;*/
@@ -1005,11 +1005,11 @@
 }
 .wwnpretty.sheet.actor i.fas:hover {
   color: #111;
-  text-shadow: 0 0 10px #2301a3;
+  text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet a:hover{
   color: #111;
-  text-shadow: 0 0 10px #2301a3;
+  text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet.actor .traits .inactive {
   color: #7a7971;
@@ -1518,7 +1518,7 @@
 }
 .wwnpretty.chat-card .card-header h3:hover {
   color: #111;
-  text-shadow: 0 0 10px #2301a3;
+  text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.chat-card .card-content {
   margin: 5px 0;

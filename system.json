@@ -2,7 +2,7 @@
   "name": "wwnpretty",
   "title": "Worlds Without Number Pretty",
   "description": "A Worlds Without Number system designed for convenience and aesthetics. Base code from the DND5e sheet by Atropos.",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "author": "Lofty",
   "scripts": [],
   "esmodules": ["wwnpretty.js"],
