@@ -11,7 +11,6 @@ Please note this system probably only compatible with Foundry 0.8.8 or so, so yo
 
 This sheet is for Worlds Without Number. I currently have some adjustments such as the notice being skill removed, and replaced by hear, smell and see. If you don't like these and want to change them, modifying the code isn't that hard. 
 
-A preview of the sheet:
 ![Preview](preview.png?raw=true)
 
 # Features
