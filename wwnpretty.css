@@ -358,7 +358,7 @@
   text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet .sheet-navigation .item.active {
-  border-bottom: 3px solid rgba(45, 161, 51, 0.62);
+  border-bottom: 3px solid rgba(23, 98, 25, 0.62);
   text-shadow: 0 0 10px #046075;
 }
 .wwnpretty.sheet .sheet-body {
@@ -1118,10 +1118,11 @@
   flex: 0 0 44px;
 }
 /*Right now, this below will target the trash and inventory icons in inventory. You can change the min and max width here -Lofty*/
-/*.wwnpretty.sheet.actor .inventory-list .inventory-icons{*/
+/*.wwnpretty.sheet.actor .item-feature-delete{*/
 /*  !*background-color: #2a2a26;*!*/
-/*  min-width: 0;*/
-/*  max-width: 50px;*/
+/*  !*min-width: 0;*!*/
+/*  !*max-width: 50px;*!*/
+/*  padding-left: 50px;*/
 /*}*/
 .wwnpretty.sheet.actor .inventory-list .item-summary {
   flex: 0 0 100%;
