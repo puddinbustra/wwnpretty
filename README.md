@@ -19,9 +19,10 @@ A preview of the sheet:
 - Aesthetically pleasing.
 - Enough space and information to conveniently manage both PCs and NPCs.
 
-
-# Support
-[Buy me a coffee ☕](https://www.buymeacoffee.com/lofty)
+# Setup notes
+- Armor class is controlled by armor you put on, but that can be changed by clicking the gear around armor class
+- Level is changed by adding a level under the features tab. New save values are calculated automatically
+- 'Global Bonuses' under the extras tab allows you to change base attack bonus, damage, etc. It also lets you change the base formula for skill calculations, such as roll 3d6 keep the two highest.
 
 # Contact
 If you have any other feedback, be it suggestions or support, send me a message on discord - lofty#8637.
