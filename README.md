@@ -23,6 +23,7 @@ This sheet is for Worlds Without Number. I currently have some adjustments such 
 - Level is changed by adding a level under the features tab. New save values are calculated automatically
 - 'Global Bonuses' under the extras tab allows you to change base attack bonus, damage, etc. It also lets you change the base formula for skill calculations, such as roll 3d6 keep the two highest.
 - I have broken up the notice skill into 3 sensory skills, since I'm running an animal game. To revert this, you'd need to go into the code and remove all instances of sensory skills, and add a notice skill in their place - admitedely a pain if you never work with code. 
+- If you want to customize the background from the green I have now, just place another file named 'parchment' in the ui folder. If you want to change the colors of highlights, and text boxes and such, you'll need to go into the wwnpretty css file, and change the relevant color codes. 
 
 # Contact
 If you have any other feedback, be it suggestions or support, send me a message on discord - lofty#8637.
